@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="fr.irisa.r2d2.gecos.framework.modules">
+      <module
+            class="fr.istic.m1.fstorm.modules.FindAllPragmas"
+            name="FindAllPragmas">
+      </module>
+      <module
+            class="fr.istic.m1.fstorm.modules.ReadComponents"
+            name="ReadComponents">
+      </module>
+   </extension>
+
+</plugin>

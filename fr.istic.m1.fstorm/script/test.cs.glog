@@ -1,0 +1,12 @@
+script test.cs {
+    pass CreateGecosProject:CreateProject {
+    }
+    pass AddSourceToGecosProject:AddSourceToGecosProject {
+    }
+    pass CDTFrontend:CDTFrontEnd {
+    }
+    pass FindAllPragmas:FindAllPragmas {
+    }
+    pass ReadComponents:ReadComponents {
+    }
+}

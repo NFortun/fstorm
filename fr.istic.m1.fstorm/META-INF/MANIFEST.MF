@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Fstorm
+Bundle-SymbolicName: fr.istic.m1.fstorm;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: fr.istic.m1.fstorm.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ fr.irisa.r2d2.gecos.framework;bundle-version="1.0.0",
+ fr.irisa.cairn.gecos.model;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
