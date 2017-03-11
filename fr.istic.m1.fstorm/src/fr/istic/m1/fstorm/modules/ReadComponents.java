@@ -3,8 +3,15 @@ package fr.istic.m1.fstorm.modules;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.istic.m1.fstorm.FStormPragma;
+import fr.istic.m1.fstorm.InvalidPragmaSyntaxException;
+import fr.istic.m1.fstorm.PragmaLexicalUnit;
+import fr.istic.m1.fstorm.beans.ComponentPragma;
 import fr.istic.m1.fstorm.beans.StormComponent;
 import fr.istic.m1.fstorm.beans.StormComponentType;
+import fr.istic.m1.fstorm.utils.PragmaLexer;
+import fr.istic.m1.fstorm.utils.PragmaLexicalException;
+import fr.istic.m1.fstorm.utils.PragmaParser;
 import gecos.annotations.AnnotatedElement;
 import gecos.annotations.PragmaAnnotation;
 import gecos.core.ProcedureSymbol;
@@ -31,19 +38,6 @@ class PragmaInformations {
 	}
 	public void setReturnType(String returnType) {
 		this.returnType = returnType;
-	}
-}
-
-class InvalidPragmaSyntaxException extends RuntimeException {
-	private static final long serialVersionUID = -3387058830838843908L;
-	private String message;
-	
-	public InvalidPragmaSyntaxException(String message) {
-		this.message = message;
-	}
-	
-	public String toString() {
-		return "Pragma syntax error : " + message;
 	}
 }
 
@@ -88,33 +82,48 @@ public class ReadComponents {
 			catch(InvalidPragmaSyntaxException e) {
 				System.err.println(e.toString());
 			}
+			
+			catch(PragmaLexicalException e) {
+				// Not a FStorm pragma, no nothing
+			}
+		}
+		
+		for(StormComponent comp : components) {
+			System.out.print(comp.getNodeType().toString());
+			System.out.print(" " + comp.getKernelName());
+			if(!comp.getParamTypes().isEmpty()) {
+				String plist = "(" + comp.getParamTypes().get(0);
+				
+				for(int i = 1; i < comp.getParamTypes().size(); ++i)
+					plist += "," + comp.getParamTypes().get(i);
+				
+				plist += ")";
+				System.out.print(plist);
+			}
+			
+			System.out.println(" returns(" + comp.getReturnType() + ")");
 		}
 		
 		return components;
 	}
 
-	private PragmaInformations parsePragma(PragmaAnnotation annotation) throws InvalidPragmaSyntaxException {
-		String content = null;
+	private PragmaInformations parsePragma(PragmaAnnotation annotation) throws InvalidPragmaSyntaxException, PragmaLexicalException {
 		PragmaInformations infos = null;
-		StormComponentType type = StormComponentType.SPOUT;
 		
 		for(String s : annotation.getContent()) {
-			if(s.startsWith("fstorm spout")) {
-				content = s;
-				type = StormComponentType.SPOUT;
-				break;
-			}
+			List<PragmaLexicalUnit> tokenList = PragmaLexer.generateTokenList(s);
+			FStormPragma pragma = PragmaParser.parsePragma(tokenList);
 			
-			else if(s.startsWith("fstorm bolt")) {
-				content = s;
-				type = StormComponentType.BOLT;
+			if(pragma instanceof ComponentPragma) {
+				ComponentPragma comp = (ComponentPragma) pragma;
+				
+				infos = new PragmaInformations();
+				infos.setNodeType(comp.getType());
+				infos.setParamTypes(comp.getParamTypes());
+				infos.setReturnType(comp.getReturnType());
+				
 				break;
 			}
-		}
-		
-		if(content != null) {
-			infos = new PragmaInformations();
-			infos.setNodeType(type);
 		}
 
 		return infos;

@@ -3,6 +3,7 @@ package fr.istic.m1.fstorm.utils;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.istic.m1.fstorm.PragmaLexicalUnit;
 import fr.istic.m1.fstorm.beans.PragmaIdentifier;
 import fr.istic.m1.fstorm.beans.PragmaSymbol;
 
@@ -52,20 +53,20 @@ public class PragmaLexer {
 				cursor++;
 				while(cursor < pragma.length() && isValidIdentifierCharacter(pragma.charAt(cursor))) {
 					ident += pragma.charAt(cursor);
+					cursor++;
 				}
 				
 				tokenList.add(createIdentifier(ident));
+				cursor--;
 				
 			}
 			
 			else if(isValidSymbol(pragma.charAt(cursor))) {
 				String sym = "" + pragma.charAt(cursor);
 				cursor++;
-				while(cursor < pragma.length() && isValidSymbol(pragma.charAt(cursor))) {
-					sym += pragma.charAt(cursor);
-				}
 				
 				tokenList.add(createSymbol(sym));
+				cursor--;
 			}
 			
 			else

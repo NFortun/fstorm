@@ -1,6 +1,6 @@
 package fr.istic.m1.fstorm.beans;
 
-import fr.istic.m1.fstorm.utils.PragmaLexicalUnit;
+import fr.istic.m1.fstorm.PragmaLexicalUnit;
 
 public class PragmaIdentifier extends PragmaLexicalUnit {
 	public PragmaIdentifier() {

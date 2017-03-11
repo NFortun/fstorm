@@ -1,4 +1,4 @@
-package fr.istic.m1.fstorm.utils;
+package fr.istic.m1.fstorm;
 
 public abstract class PragmaLexicalUnit {
 	private String value;
