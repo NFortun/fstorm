@@ -5,6 +5,7 @@ import java.util.List;
 
 import fr.istic.m1.fstorm.FStormPragma;
 import fr.istic.m1.fstorm.InvalidPragmaSyntaxException;
+import fr.istic.m1.fstorm.ParameterCountException;
 import fr.istic.m1.fstorm.PragmaLexicalUnit;
 import fr.istic.m1.fstorm.beans.ComponentPragma;
 import fr.istic.m1.fstorm.beans.StormComponent;
@@ -52,7 +53,7 @@ public class ReadComponents {
 		this.annotations = annotations;
 	}
 	
-	public List<StormComponent> compute() {
+	public List<StormComponent> compute() throws ParameterCountException {
 		List<StormComponent> components = new ArrayList<StormComponent>();
 		
 		for(PragmaAnnotation annotation : annotations) {
@@ -71,11 +72,12 @@ public class ReadComponents {
 						ProcedureSymbol proc = (ProcedureSymbol) elem;
 						component.setKernelName(proc.getName());
 						component.setKernel(proc.getProcedure());
+						
+						checkParameters(component);
+						components.add(component);
 					}
 					
 					//! TODO voir Xtend pour la génération
-					
-					components.add(component);
 				}
 			}
 			
@@ -105,6 +107,19 @@ public class ReadComponents {
 		}
 		
 		return components;
+	}
+
+	/**
+	 * Function that checks whether the number of arguments the kernel takes corresponds to the number of arguments needed by the pragma.
+	 * @param component the component which parameter lists are compared.
+	 * @throws ParameterCountException 
+	 */
+	private void checkParameters(StormComponent component) throws ParameterCountException {
+		int paramCount = component.getKernel().getSymbol().listParameters().size();
+		int pragmaParamCount = component.getParamTypes().size();
+
+		if(paramCount != pragmaParamCount)
+			throw new ParameterCountException(pragmaParamCount, paramCount);
 	}
 
 	private PragmaInformations parsePragma(PragmaAnnotation annotation) throws InvalidPragmaSyntaxException, PragmaLexicalException {
