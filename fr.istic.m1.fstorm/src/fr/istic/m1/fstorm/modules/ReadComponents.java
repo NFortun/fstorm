@@ -17,42 +17,89 @@ import gecos.annotations.AnnotatedElement;
 import gecos.annotations.PragmaAnnotation;
 import gecos.core.ProcedureSymbol;
 
+/**
+ * Auxiliary class used to store informations from pragma annotations.
+ * @author Kévin Le Bon
+ *
+ */
 class PragmaInformations {
+	/** The storm component type (spout or bolt). */
 	private StormComponentType nodeType;
+	/** The list of parameters' Java type. */
 	private List<String> paramTypes;
+	/** The function's return type (Java side). */
 	private String returnType;
 	
+	/**
+	 * Getter for the component type.
+	 * @return the component type.
+	 */
 	public StormComponentType getNodeType() {
 		return nodeType;
 	}
+	
+	/**
+	 * Setter for the component type.
+	 * @param nodeType the component's type.
+	 */
 	public void setNodeType(StormComponentType nodeType) {
 		this.nodeType = nodeType;
 	}
+	
+	/**
+	 * Getter for the parameter-type list.
+	 * @return the parameter-type list.
+	 */
 	public List<String> getParamTypes() {
 		return paramTypes;
 	}
+	
+	/**
+	 * Setter for the parameter-type list.
+	 * @param paramTypes the parameter-type list.
+	 */
 	public void setParamTypes(List<String> paramTypes) {
 		this.paramTypes = paramTypes;
 	}
+	
+	/**
+	 * Getter for the return type.
+	 * @return the return type.
+	 */
 	public String getReturnType() {
 		return returnType;
 	}
+	
+	/**
+	 * Setter for the return type.
+	 * @param returnType the return type.
+	 */
 	public void setReturnType(String returnType) {
 		this.returnType = returnType;
 	}
 }
 
 /**
- * ReadComponents is a sample module. When the script evaluator encounters
+ * ReadComponents is a GeCoS module. When the script evaluator encounters
  * the 'ReadComponents' function, it calls the compute method.
+ * @author Kévin Le Bon
  */
 public class ReadComponents {
 	private List<PragmaAnnotation> annotations;
 	
+	/**
+	 * Constructor using a list of annotations in the C code.
+	 * @param annotations pragma annotations detected in the C code.
+	 */
 	public ReadComponents(List<PragmaAnnotation> annotations) {
 		this.annotations = annotations;
 	}
 	
+	/**
+	 * Fonction computing a list of Storm components from the given list of annotations.
+	 * @return the list of components taken from the annotations.
+	 * @throws ParameterCountException
+	 */
 	public List<StormComponent> compute() throws ParameterCountException {
 		List<StormComponent> components = new ArrayList<StormComponent>();
 		
@@ -122,6 +169,13 @@ public class ReadComponents {
 			throw new ParameterCountException(pragmaParamCount, paramCount);
 	}
 
+	/**
+	 * Function that take a pragma annotation, checks whether it is a valid fstorm pragma and returns the associated informations.
+	 * @param annotation the annotation from which the informations are retrieved.
+	 * @return the informations associated with the pragma annotation.
+	 * @throws InvalidPragmaSyntaxException
+	 * @throws PragmaLexicalException
+	 */
 	private PragmaInformations parsePragma(PragmaAnnotation annotation) throws InvalidPragmaSyntaxException, PragmaLexicalException {
 		PragmaInformations infos = null;
 		

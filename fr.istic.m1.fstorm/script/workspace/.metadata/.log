@@ -2658,3 +2658,1482 @@ java.lang.IllegalArgumentException
 
 !ENTRY org.eclipse.core.resources 2 10035 2017-03-11 14:48:54.520
 !MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2017-03-14 10:38:00.192 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -c test.cs
+Command-line arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -dev file:/home/chem/prgm/eclipse/workspace/.metadata/.plugins/org.eclipse.pde.core/Gecos Script test.cs (3)/dev.properties -os linux -ws gtk -arch x86_64 -c test.cs
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 10:38:48.598
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/types'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 10:38:48.601
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/instrs'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 10:38:48.602
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/blocks'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 10:38:48.603
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/core'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 10:38:48.603
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/dag'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 10:38:48.604
+!MESSAGE Both 'fr.irisa.cairn.gecos.model.scop' and 'fr.irisa.cairn.gecos.model.scop' register a package for 'http://www.irisa.fr/cairn/model/gecos/scop/transform'
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 10:38:49.463
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-03-14 10:39:00.608
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.cdt.core.CCorePlugin.stop() of bundle org.eclipse.cdt.core.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:850)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	... 13 more
+Root exception:
+java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 10:39:01.007
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2017-03-14 11:29:31.114 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -c test.cs
+Command-line arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -dev file:/home/chem/prgm/eclipse/workspace/.metadata/.plugins/org.eclipse.pde.core/Gecos Script test.cs (3)/dev.properties -os linux -ws gtk -arch x86_64 -c test.cs
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:29:53.193
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/types'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:29:53.197
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/instrs'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:29:53.197
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/blocks'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:29:53.198
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/core'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:29:53.199
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/dag'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:29:53.204
+!MESSAGE Both 'fr.irisa.cairn.gecos.model.scop' and 'fr.irisa.cairn.gecos.model.scop' register a package for 'http://www.irisa.fr/cairn/model/gecos/scop/transform'
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:29:53.817
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-03-14 11:30:01.336
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.cdt.core.CCorePlugin.stop() of bundle org.eclipse.cdt.core.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:850)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	... 13 more
+Root exception:
+java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:30:01.449
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2017-03-14 11:31:20.272 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -c test.cs
+Command-line arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -dev file:/home/chem/prgm/eclipse/workspace/.metadata/.plugins/org.eclipse.pde.core/Gecos Script test.cs (3)/dev.properties -os linux -ws gtk -arch x86_64 -c test.cs
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:31:39.986
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/types'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:31:39.989
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/instrs'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:31:39.990
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/blocks'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:31:39.990
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/core'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:31:39.991
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/dag'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:31:39.993
+!MESSAGE Both 'fr.irisa.cairn.gecos.model.scop' and 'fr.irisa.cairn.gecos.model.scop' register a package for 'http://www.irisa.fr/cairn/model/gecos/scop/transform'
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:31:40.376
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-03-14 11:31:46.518
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.cdt.core.CCorePlugin.stop() of bundle org.eclipse.cdt.core.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:850)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	... 13 more
+Root exception:
+java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:31:46.660
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2017-03-14 11:33:45.951 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -c test.cs
+Command-line arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -dev file:/home/chem/prgm/eclipse/workspace/.metadata/.plugins/org.eclipse.pde.core/Gecos Script test.cs (3)/dev.properties -os linux -ws gtk -arch x86_64 -c test.cs
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:34:06.035
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/types'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:34:06.038
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/instrs'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:34:06.039
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/blocks'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:34:06.040
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/core'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:34:06.041
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/dag'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:34:06.042
+!MESSAGE Both 'fr.irisa.cairn.gecos.model.scop' and 'fr.irisa.cairn.gecos.model.scop' register a package for 'http://www.irisa.fr/cairn/model/gecos/scop/transform'
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:34:06.818
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-03-14 11:34:14.392
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.cdt.core.CCorePlugin.stop() of bundle org.eclipse.cdt.core.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:850)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	... 13 more
+Root exception:
+java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:34:14.504
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2017-03-14 11:36:44.363 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -c test.cs
+Command-line arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -dev file:/home/chem/prgm/eclipse/workspace/.metadata/.plugins/org.eclipse.pde.core/Gecos Script test.cs (3)/dev.properties -os linux -ws gtk -arch x86_64 -c test.cs
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:37:01.547
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/types'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:37:01.550
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/instrs'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:37:01.551
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/blocks'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:37:01.551
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/core'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:37:01.552
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/dag'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:37:01.557
+!MESSAGE Both 'fr.irisa.cairn.gecos.model.scop' and 'fr.irisa.cairn.gecos.model.scop' register a package for 'http://www.irisa.fr/cairn/model/gecos/scop/transform'
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:37:02.081
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-03-14 11:37:08.882
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.cdt.core.CCorePlugin.stop() of bundle org.eclipse.cdt.core.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:850)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	... 13 more
+Root exception:
+java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:37:08.983
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2017-03-14 11:37:33.137 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -c test.cs
+Command-line arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -dev file:/home/chem/prgm/eclipse/workspace/.metadata/.plugins/org.eclipse.pde.core/Gecos Script test.cs (3)/dev.properties -os linux -ws gtk -arch x86_64 -c test.cs
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:37:50.451
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/types'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:37:50.454
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/instrs'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:37:50.455
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/blocks'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:37:50.455
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/core'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:37:50.456
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/dag'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:37:50.461
+!MESSAGE Both 'fr.irisa.cairn.gecos.model.scop' and 'fr.irisa.cairn.gecos.model.scop' register a package for 'http://www.irisa.fr/cairn/model/gecos/scop/transform'
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:37:50.964
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-03-14 11:37:57.627
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.cdt.core.CCorePlugin.stop() of bundle org.eclipse.cdt.core.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:850)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	... 13 more
+Root exception:
+java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:37:57.754
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2017-03-14 11:38:45.210 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -c test.cs
+Command-line arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -dev file:/home/chem/prgm/eclipse/workspace/.metadata/.plugins/org.eclipse.pde.core/Gecos Script test.cs (3)/dev.properties -os linux -ws gtk -arch x86_64 -c test.cs
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:39:02.083
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/types'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:39:02.087
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/instrs'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:39:02.088
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/blocks'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:39:02.088
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/core'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:39:02.089
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/dag'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:39:02.093
+!MESSAGE Both 'fr.irisa.cairn.gecos.model.scop' and 'fr.irisa.cairn.gecos.model.scop' register a package for 'http://www.irisa.fr/cairn/model/gecos/scop/transform'
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:39:02.511
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-03-14 11:39:08.637
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.cdt.core.CCorePlugin.stop() of bundle org.eclipse.cdt.core.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:850)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	... 13 more
+Root exception:
+java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:39:08.809
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2017-03-14 11:39:43.478 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -c test.cs
+Command-line arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -dev file:/home/chem/prgm/eclipse/workspace/.metadata/.plugins/org.eclipse.pde.core/Gecos Script test.cs (3)/dev.properties -os linux -ws gtk -arch x86_64 -c test.cs
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:40:04.265
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/types'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:40:04.269
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/instrs'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:40:04.270
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/blocks'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:40:04.271
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/core'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:40:04.272
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/dag'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:40:04.279
+!MESSAGE Both 'fr.irisa.cairn.gecos.model.scop' and 'fr.irisa.cairn.gecos.model.scop' register a package for 'http://www.irisa.fr/cairn/model/gecos/scop/transform'
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:40:04.778
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-03-14 11:40:11.531
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.cdt.core.CCorePlugin.stop() of bundle org.eclipse.cdt.core.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:850)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	... 13 more
+Root exception:
+java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:40:11.658
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2017-03-14 11:40:53.171 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -c test.cs
+Command-line arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -dev file:/home/chem/prgm/eclipse/workspace/.metadata/.plugins/org.eclipse.pde.core/Gecos Script test.cs (3)/dev.properties -os linux -ws gtk -arch x86_64 -c test.cs
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:41:10.523
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/types'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:41:10.526
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/instrs'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:41:10.526
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/blocks'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:41:10.527
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/core'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:41:10.528
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/dag'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:41:10.529
+!MESSAGE Both 'fr.irisa.cairn.gecos.model.scop' and 'fr.irisa.cairn.gecos.model.scop' register a package for 'http://www.irisa.fr/cairn/model/gecos/scop/transform'
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:41:11.033
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-03-14 11:41:17.407
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.cdt.core.CCorePlugin.stop() of bundle org.eclipse.cdt.core.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:850)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	... 13 more
+Root exception:
+java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:41:17.542
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2017-03-14 11:42:01.146 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -c test.cs
+Command-line arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -dev file:/home/chem/prgm/eclipse/workspace/.metadata/.plugins/org.eclipse.pde.core/Gecos Script test.cs (3)/dev.properties -os linux -ws gtk -arch x86_64 -c test.cs
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:42:18.434
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/types'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:42:18.438
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/instrs'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:42:18.439
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/blocks'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:42:18.440
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/core'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:42:18.441
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/dag'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:42:18.445
+!MESSAGE Both 'fr.irisa.cairn.gecos.model.scop' and 'fr.irisa.cairn.gecos.model.scop' register a package for 'http://www.irisa.fr/cairn/model/gecos/scop/transform'
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:42:18.852
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-03-14 11:42:25.452
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.cdt.core.CCorePlugin.stop() of bundle org.eclipse.cdt.core.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:850)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	... 13 more
+Root exception:
+java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:42:25.578
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2017-03-14 11:42:57.961 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -c test.cs
+Command-line arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -dev file:/home/chem/prgm/eclipse/workspace/.metadata/.plugins/org.eclipse.pde.core/Gecos Script test.cs (3)/dev.properties -os linux -ws gtk -arch x86_64 -c test.cs
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:43:15.657
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/types'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:43:15.659
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/instrs'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:43:15.660
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/blocks'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:43:15.661
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/core'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:43:15.662
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/dag'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:43:15.667
+!MESSAGE Both 'fr.irisa.cairn.gecos.model.scop' and 'fr.irisa.cairn.gecos.model.scop' register a package for 'http://www.irisa.fr/cairn/model/gecos/scop/transform'
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:43:16.119
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-03-14 11:43:23.267
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.cdt.core.CCorePlugin.stop() of bundle org.eclipse.cdt.core.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:850)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	... 13 more
+Root exception:
+java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:43:23.368
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2017-03-14 11:43:47.091 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -c test.cs
+Command-line arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -dev file:/home/chem/prgm/eclipse/workspace/.metadata/.plugins/org.eclipse.pde.core/Gecos Script test.cs (3)/dev.properties -os linux -ws gtk -arch x86_64 -c test.cs
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:44:03.940
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/types'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:44:03.944
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/instrs'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:44:03.945
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/blocks'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:44:03.945
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/core'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:44:03.946
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/dag'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:44:03.951
+!MESSAGE Both 'fr.irisa.cairn.gecos.model.scop' and 'fr.irisa.cairn.gecos.model.scop' register a package for 'http://www.irisa.fr/cairn/model/gecos/scop/transform'
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:44:04.386
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-03-14 11:44:10.402
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.cdt.core.CCorePlugin.stop() of bundle org.eclipse.cdt.core.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:850)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	... 13 more
+Root exception:
+java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:44:10.525
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2017-03-14 11:44:51.360 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -c test.cs
+Command-line arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -dev file:/home/chem/prgm/eclipse/workspace/.metadata/.plugins/org.eclipse.pde.core/Gecos Script test.cs (3)/dev.properties -os linux -ws gtk -arch x86_64 -c test.cs
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:45:07.205
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/types'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:45:07.208
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/instrs'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:45:07.209
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/blocks'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:45:07.210
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/core'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:45:07.211
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/dag'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:45:07.217
+!MESSAGE Both 'fr.irisa.cairn.gecos.model.scop' and 'fr.irisa.cairn.gecos.model.scop' register a package for 'http://www.irisa.fr/cairn/model/gecos/scop/transform'
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:45:07.640
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-03-14 11:45:13.755
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.cdt.core.CCorePlugin.stop() of bundle org.eclipse.cdt.core.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:850)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	... 13 more
+Root exception:
+java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:45:13.855
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2017-03-14 11:45:57.238 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -c test.cs
+Command-line arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -dev file:/home/chem/prgm/eclipse/workspace/.metadata/.plugins/org.eclipse.pde.core/Gecos Script test.cs (3)/dev.properties -os linux -ws gtk -arch x86_64 -c test.cs
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:46:15.453
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/types'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:46:15.456
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/instrs'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:46:15.458
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/blocks'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:46:15.459
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/core'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:46:15.459
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/dag'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:46:15.465
+!MESSAGE Both 'fr.irisa.cairn.gecos.model.scop' and 'fr.irisa.cairn.gecos.model.scop' register a package for 'http://www.irisa.fr/cairn/model/gecos/scop/transform'
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:46:15.935
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-03-14 11:46:23.117
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.cdt.core.CCorePlugin.stop() of bundle org.eclipse.cdt.core.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:850)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	... 13 more
+Root exception:
+java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:46:23.206
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2017-03-14 11:47:24.960 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -c test.cs
+Command-line arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -dev file:/home/chem/prgm/eclipse/workspace/.metadata/.plugins/org.eclipse.pde.core/Gecos Script test.cs (3)/dev.properties -os linux -ws gtk -arch x86_64 -c test.cs
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:47:43.173
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/types'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:47:43.176
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/instrs'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:47:43.176
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/blocks'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:47:43.177
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/core'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:47:43.178
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/dag'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:47:43.181
+!MESSAGE Both 'fr.irisa.cairn.gecos.model.scop' and 'fr.irisa.cairn.gecos.model.scop' register a package for 'http://www.irisa.fr/cairn/model/gecos/scop/transform'
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:47:43.821
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-03-14 11:47:49.895
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.cdt.core.CCorePlugin.stop() of bundle org.eclipse.cdt.core.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:850)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	... 13 more
+Root exception:
+java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:47:50.013
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2017-03-14 11:48:10.999 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -c test.cs
+Command-line arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -dev file:/home/chem/prgm/eclipse/workspace/.metadata/.plugins/org.eclipse.pde.core/Gecos Script test.cs (3)/dev.properties -os linux -ws gtk -arch x86_64 -c test.cs
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:48:28.300
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/types'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:48:28.302
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/instrs'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:48:28.302
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/blocks'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:48:28.303
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/core'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:48:28.303
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/dag'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:48:28.304
+!MESSAGE Both 'fr.irisa.cairn.gecos.model.scop' and 'fr.irisa.cairn.gecos.model.scop' register a package for 'http://www.irisa.fr/cairn/model/gecos/scop/transform'
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:48:28.744
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-03-14 11:48:34.755
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.cdt.core.CCorePlugin.stop() of bundle org.eclipse.cdt.core.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:850)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	... 13 more
+Root exception:
+java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:48:34.861
+!MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2017-03-14 11:49:45.486 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -c test.cs
+Command-line arguments:  -application fr.irisa.r2d2.gecos.framework.compiler -dev file:/home/chem/prgm/eclipse/workspace/.metadata/.plugins/org.eclipse.pde.core/Gecos Script test.cs (3)/dev.properties -os linux -ws gtk -arch x86_64 -c test.cs
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:50:01.720
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/types'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:50:01.723
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/instrs'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:50:01.724
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/blocks'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:50:01.725
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/core'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:50:01.726
+!MESSAGE Both 'fr.irisa.cairn.gecos.model' and 'fr.irisa.cairn.gecos.model' register a package for 'http://www.gecos.org/dag'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-03-14 11:50:01.731
+!MESSAGE Both 'fr.irisa.cairn.gecos.model.scop' and 'fr.irisa.cairn.gecos.model.scop' register a package for 'http://www.irisa.fr/cairn/model/gecos/scop/transform'
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:50:02.175
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.cdt.core 4 0 2017-03-14 11:50:08.454
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Exception in org.eclipse.cdt.core.CCorePlugin.stop() of bundle org.eclipse.cdt.core.
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:850)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	... 13 more
+Root exception:
+java.lang.IllegalArgumentException
+	at org.eclipse.core.runtime.ListenerList.remove(ListenerList.java:215)
+	at org.eclipse.cdt.internal.core.language.settings.providers.LanguageSettingsProvidersSerializer.unregisterLanguageSettingsChangeListener(LanguageSettingsProvidersSerializer.java:1401)
+	at org.eclipse.cdt.core.language.settings.providers.LanguageSettingsManager.unregisterLanguageSettingsChangeListener(LanguageSettingsManager.java:303)
+	at org.eclipse.cdt.internal.core.model.CModelManager.shutdown(CModelManager.java:1363)
+	at org.eclipse.cdt.core.model.CoreModel.shutdown(CoreModel.java:1147)
+	at org.eclipse.cdt.core.CCorePlugin.stop(CCorePlugin.java:346)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:830)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:823)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:946)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:314)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1661)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1580)
+	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:270)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:147)
+	at org.eclipse.osgi.container.Module.doStop(Module.java:636)
+	at org.eclipse.osgi.container.Module.stop(Module.java:498)
+	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:202)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:165)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-03-14 11:50:08.568
+!MESSAGE The workspace will exit with unsaved changes in this session.
