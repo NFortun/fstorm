@@ -7,9 +7,11 @@ import gecos.core.Procedure;
 public class StormComponent {
 	private Procedure kernel;
 	private String kernelName;
+	private String libraryName;
 	private StormComponentType nodeType;
 	private List<String> paramTypes;
 	private String returnType;
+	private Procedure wrapper;
 	
 	public Procedure getKernel() {
 		return kernel;
@@ -25,6 +27,14 @@ public class StormComponent {
 	
 	public void setKernelName(String kernelName) {
 		this.kernelName = kernelName;
+	}
+
+	public String getLibraryName() {
+		return libraryName;
+	}
+
+	public void setLibraryName(String libraryName) {
+		this.libraryName = libraryName;
 	}
 	
 	public StormComponentType getNodeType() {
@@ -51,6 +61,14 @@ public class StormComponent {
 		this.returnType = returnType;
 	}
 
+	public Procedure getWrapper() {
+		return wrapper;
+	}
+
+	public void setWrapper(Procedure wrapper) {
+		this.wrapper = wrapper;
+	}
+
 	public static StormComponent createNewBolt() {
 		StormComponent bolt = new StormComponent();
 		bolt.setNodeType(StormComponentType.BOLT);
@@ -61,20 +79,5 @@ public class StormComponent {
 		StormComponent spout = new StormComponent();
 		spout.setNodeType(StormComponentType.SPOUT);
 		return spout;
-	}
-	
-	/**
-	 * Function generating the Java code of the spout/bolt.
-	 * @return The Java code of the spout/bolt.
-	 */
-	public String generateJavaCode() {
-		String classDeclaration = "public class " + this.kernelName + " extends ";
-		
-		if(this.nodeType == StormComponentType.SPOUT)
-			classDeclaration += "IRichSpout {";
-		else
-			classDeclaration += "IRichBolt {";
-		
-		return classDeclaration + "\n}";
 	}
 }
