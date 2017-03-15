@@ -8,6 +8,7 @@ import fr.istic.m1.fstorm.InvalidPragmaSyntaxException;
 import fr.istic.m1.fstorm.PragmaLexicalUnit;
 import fr.istic.m1.fstorm.beans.ComponentPragma;
 import fr.istic.m1.fstorm.beans.FStormHLSPragma;
+import fr.istic.m1.fstorm.beans.TupleReturnPragma;
 
 /**
  * This class encapsulate the parser for a Java type.
@@ -120,6 +121,8 @@ public class PragmaParser {
 					case "hls":
 					case "HLS":
 						return new FStormHLSPragma();
+					case "tuple":
+						return new TupleReturnPragma();
 					default:
 						throw new InvalidPragmaSyntaxException("expected identifier \"spout\", \"bolt\", \"hls\" or \"HLS\"");
 				}
