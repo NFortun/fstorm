@@ -123,8 +123,6 @@ public class ReadComponents {
 						checkParameters(component);
 						components.add(component);
 					}
-					
-					//! TODO voir Xtend pour la génération
 				}
 			}
 			
