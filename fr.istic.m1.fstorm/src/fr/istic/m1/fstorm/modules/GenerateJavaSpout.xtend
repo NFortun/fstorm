@@ -3,12 +3,27 @@ package fr.istic.m1.fstorm.modules
 import fr.istic.m1.fstorm.beans.StormComponent
 import gecos.core.ParameterSymbol
 import java.util.List
+import java.util.ArrayList
 
 class GenerateJavaSpout {
 	private String packageName;
+	
+	new (String pn) {
+		this.packageName = pn;
+	}
 
-	def GenerateJava(StormComponent component) '''
-		package «packageName»
+	def GenerateJava(StormComponent component) { 
+		val kparams = component.kernel.listParameters();
+		var params = new ArrayList<String>();
+		for (var i = 0; i < kparams.size(); i++)
+			params.add(component.paramTypes.get(i) + ' ' + kparams.get(i).name)
+			
+		var argsToC = new ArrayList<String>();
+		for (var i = 0; i < kparams.size(); i++)
+			argsToC.add('(' + component.paramTypes.get(i) + ')' + " tuple.get(" + i + ')')		
+		
+		'''	
+		package «packageName»;
 		
 		import org.apache.storm.tuple.Fields;
 		import org.apache.storm.tuple.Values;		
@@ -18,11 +33,15 @@ class GenerateJavaSpout {
 		import org.apache.storm.task.TopologyContext;
 		import java.util.Map;
 		
-		class «component.kernelName.toFirstUpper()» implements IRichSpout {
+		
+		
+		class «component.kernelName.toFirstUpper()»_Spout implements IRichSpout {
 			private SpoutOutputCollector collector;
 			private boolean completed = false;
 			
 			private TopologyContext context;
+			
+			public native «component.returnType» «component.kernelName»(«FOR arg : params SEPARATOR ',' »«arg»«ENDFOR»);
 		  
 		  	@Override
 		  	public void open(Map conf, TopologyContext context, SpoutOutputCollector collector) {
@@ -32,7 +51,7 @@ class GenerateJavaSpout {
 		  
 		    @Override
 		    	public void nextTuple() {
-		      	collector.emit(«component.wrapper.symbol.name»());
+		      	collector.emit(«component.kernelName»(«FOR arg : params SEPARATOR ',' »«arg»«ENDFOR»));
 		    }
 		    
 		    @Override
@@ -69,6 +88,7 @@ class GenerateJavaSpout {
 		    }
 		}
 		
-		static { System.loadLibrary(«component.libraryName»); }		
+		static { System.loadLibrary(«component.kernelName»); }		
 	'''
+	}
 }

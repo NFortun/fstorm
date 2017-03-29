@@ -8,4 +8,5 @@ proj = CreateGecosProject(name);
 AddSourceToGecosProject(proj,"./test.c");
 CDTFrontend(proj);
 pragmas = FindAllPragmas(proj);
-ReadComponents(pragmas);
+list=ReadComponents(pragmas);
+TestSpout(list);
