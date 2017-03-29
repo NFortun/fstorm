@@ -1,8 +1,9 @@
 package fr.istic.m1.fstorm.modules
 
 import fr.istic.m1.fstorm.beans.StormComponent
-import gecos.core.ParameterSymbol
-import java.util.List
+import java.nio.file.Files
+import java.nio.file.Paths
+import java.nio.file.StandardOpenOption
 import java.util.ArrayList
 
 class GenerateJavaSpout {
@@ -91,4 +92,10 @@ class GenerateJavaSpout {
 		static { System.loadLibrary(«component.kernelName»); }		
 	'''
 	}
+	
+	def Execute(StormComponent cmp) {
+		val java = GenerateJava(cmp) 
+		Files.write(Paths.get(cmp.kernelName + "_Spout.java"), java.toString().bytes, StandardOpenOption.CREATE)
+	} 
+	
 }

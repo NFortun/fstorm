@@ -15,8 +15,7 @@ public class TestSpout {
         
         GenerateJavaSpout gen = new GenerateJavaSpout("packageName");
         for(StormComponent pouet : list){
-        CharSequence test = gen.GenerateJava(pouet);
-        System.out.println(test);
+        gen.Execute(pouet);
         System.out.println("----------------------");
         }
 
