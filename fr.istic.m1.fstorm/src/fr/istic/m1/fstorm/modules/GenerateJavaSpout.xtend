@@ -13,16 +13,7 @@ class GenerateJavaSpout {
 		this.packageName = pn;
 	}
 
-	def GenerateJava(StormComponent component) { 
-		val kparams = component.kernel.listParameters();
-		var params = new ArrayList<String>();
-		for (var i = 0; i < kparams.size(); i++)
-			params.add(component.paramTypes.get(i) + ' ' + kparams.get(i).name)
-			
-		var argsToC = new ArrayList<String>();
-		for (var i = 0; i < kparams.size(); i++)
-			argsToC.add('(' + component.paramTypes.get(i) + ')' + " tuple.get(" + i + ')')		
-		
+	def GenerateJava(StormComponent component)
 		'''	
 		package «packageName»;
 		
@@ -42,7 +33,7 @@ class GenerateJavaSpout {
 			
 			private TopologyContext context;
 			
-			public native «component.returnType» «component.kernelName»(«FOR arg : params SEPARATOR ',' »«arg»«ENDFOR»);
+			public native «component.returnType» «component.kernelName»();
 		  
 		  	@Override
 		  	public void open(Map conf, TopologyContext context, SpoutOutputCollector collector) {
@@ -52,7 +43,7 @@ class GenerateJavaSpout {
 		  
 		    @Override
 		    	public void nextTuple() {
-		      	collector.emit(«component.kernelName»(«FOR arg : params SEPARATOR ',' »«arg»«ENDFOR»));
+		      	collector.emit(«component.kernelName»());
 		    }
 		    
 		    @Override
@@ -91,11 +82,10 @@ class GenerateJavaSpout {
 		
 		static { System.loadLibrary(«component.kernelName»); }		
 	'''
-	}
 	
 	def Execute(StormComponent cmp) {
 		val java = GenerateJava(cmp) 
-		Files.write(Paths.get(cmp.kernelName + "_Spout.java"), java.toString().bytes, StandardOpenOption.CREATE)
+		Files.write(Paths.get("spouts",cmp.kernelName + "_Spout.java"), java.toString().bytes, StandardOpenOption.CREATE)
 	} 
 	
 }
