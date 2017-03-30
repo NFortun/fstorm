@@ -6,6 +6,11 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: fr.istic.m1.fstorm.Activator
 Require-Bundle: org.eclipse.core.runtime,
  fr.irisa.r2d2.gecos.framework;bundle-version="1.0.0",
- fr.irisa.cairn.gecos.model;bundle-version="1.0.0"
+ fr.irisa.cairn.gecos.model;bundle-version="1.0.0",
+ com.google.guava,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtend.lib,
+ org.eclipse.xtend.lib.macro
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
+

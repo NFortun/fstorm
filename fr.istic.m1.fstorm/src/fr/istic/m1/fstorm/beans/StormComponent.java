@@ -7,7 +7,6 @@ import gecos.core.Procedure;
 public class StormComponent {
 	private Procedure kernel;
 	private String kernelName;
-	private String libraryName;
 	private StormComponentType nodeType;
 	private List<String> paramTypes;
 	private String returnType;
@@ -27,14 +26,6 @@ public class StormComponent {
 	
 	public void setKernelName(String kernelName) {
 		this.kernelName = kernelName;
-	}
-
-	public String getLibraryName() {
-		return libraryName;
-	}
-
-	public void setLibraryName(String libraryName) {
-		this.libraryName = libraryName;
 	}
 	
 	public StormComponentType getNodeType() {
