@@ -1,10 +1,9 @@
-package fr.istic.m1.fstorm.modules
+package fr.istic.m1.fstorm.utils
 
 import fr.istic.m1.fstorm.beans.StormComponent
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.nio.file.StandardOpenOption
-import java.util.ArrayList
 
 class GenerateJavaSpout {
 	private String packageName;
@@ -76,10 +75,10 @@ class GenerateJavaSpout {
 			public Map<String, Object> getComponentConfiguration() {
 			 	return null;
 			}
+			
+			static { System.loadLibrary(«component.kernelName»); }
 		}
-		
-		static { System.loadLibrary(«component.kernelName»); }
-	'''
+		'''
 	
 	def Execute(StormComponent cmp) {
 		val java = GenerateJava(cmp)
