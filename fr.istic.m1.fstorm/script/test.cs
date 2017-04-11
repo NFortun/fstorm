@@ -9,4 +9,4 @@ AddSourceToGecosProject(proj,"./test.c");
 CDTFrontend(proj);
 pragmas = FindAllPragmas(proj);
 list=ReadComponents(pragmas);
-TestSpout(list);
+GenerateJavaClass(list, "/home/chem/test_fstorm", "whatever.test", "test");

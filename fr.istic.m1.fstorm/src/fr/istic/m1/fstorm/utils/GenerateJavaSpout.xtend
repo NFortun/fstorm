@@ -6,10 +6,14 @@ import java.nio.file.Paths
 import java.nio.file.StandardOpenOption
 
 class GenerateJavaSpout {
+	private String odir;
 	private String packageName;
+	private String libName;
 	
-	new (String pn) {
+	new (String pn, String odir, String libName) {
 		this.packageName = pn;
+		this.odir = odir;
+		this.libName = libName;
 	}
 
 	def GenerateJava(StormComponent component)
@@ -24,7 +28,7 @@ class GenerateJavaSpout {
 		import org.apache.storm.task.TopologyContext;
 		import java.util.Map;
 		
-		class «component.kernelName.toFirstUpper()»_Spout implements IRichSpout {
+		class «component.kernelName.toFirstUpper()»Spout implements IRichSpout {
 			private SpoutOutputCollector collector;
 			private boolean completed = false;
 
@@ -76,16 +80,16 @@ class GenerateJavaSpout {
 			 	return null;
 			}
 			
-			static { System.loadLibrary(«component.kernelName»); }
+			static { System.loadLibrary("«libName»"); }
 		}
 		'''
 	
 	def Execute(StormComponent cmp) {
 		val java = GenerateJava(cmp)
-		if(!Files.exists(Paths.get("spouts")))
-			Files.createDirectory(Paths.get("spouts"))
-		Files.deleteIfExists(Paths.get("spouts",cmp.kernelName + "_Spout.java"))
-		Files.write(Paths.get("spouts",cmp.kernelName + "_Spout.java"), java.toString().bytes, StandardOpenOption.CREATE)
+		if(!Files.exists(Paths.get(odir)))
+			Files.createDirectory(Paths.get(odir))
+		Files.deleteIfExists(Paths.get(odir, cmp.kernelName + "Spout.java"))
+		Files.write(Paths.get(odir, cmp.kernelName + "Spout.java"), java.toString().bytes, StandardOpenOption.CREATE)
 	} 
 	
 }

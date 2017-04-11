@@ -9,11 +9,13 @@ import backtype.storm.tuple.Tuple
 
 class GenerateJavaBolt {
 	String packageName;
-	String BuilDir;
+	String BuildDir;
+	String libName;
 	
-	new(String packageName, String BuildDir) {
+	new(String packageName, String BuildDir, String libName) {
 		this.packageName = packageName;
-		this.BuilDir = BuilDir;
+		this.BuildDir = BuildDir;
+		this.libName = libName;
 	}
 
 
@@ -61,7 +63,7 @@ class GenerateJavaBolt {
 				public native « component.returnType» «component.kernelName»(«FOR arg : param SEPARATOR ',' »«arg»«ENDFOR»);
 
 				static {
-					System.loadLibrary("«component.kernelName»");
+					System.loadLibrary("«libName»");
 				}
 
 				public void prepare(Map conf, TopologyContext context, OutputCollector collector) {
@@ -86,7 +88,7 @@ class GenerateJavaBolt {
 	def Execute(StormComponent component) {
 		//System.out.println("Lancement de la génération")
 		val JavaGenerated = GenerateJava(component)
-		val file = new File( component.kernelName.toFirstUpper() + "Bolt.java")
+		val file = new File( BuildDir + "/" + component.kernelName.toFirstUpper() + "Bolt.java")
 		val FileWriter = new BufferedOutputStream(new FileOutputStream(file))
 		FileWriter.write(JavaGenerated.toString().bytes)
 		FileWriter.flush()

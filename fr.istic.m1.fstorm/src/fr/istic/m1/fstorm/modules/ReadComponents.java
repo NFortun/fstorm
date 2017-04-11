@@ -135,6 +135,7 @@ public class ReadComponents {
 			}
 		}
 		
+		/* Loop printing debug informations about generated components
 		for(StormComponent comp : components) {
 			System.out.print(comp.getNodeType().toString());
 			System.out.print(" " + comp.getKernelName());
@@ -149,7 +150,7 @@ public class ReadComponents {
 			}
 			
 			System.out.println(" returns(" + comp.getReturnType() + ")");
-		}
+		}*/
 		
 		return components;
 	}

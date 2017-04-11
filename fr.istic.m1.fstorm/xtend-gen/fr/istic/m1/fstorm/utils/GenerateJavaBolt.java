@@ -18,11 +18,14 @@ import org.eclipse.xtext.xbase.lib.StringExtensions;
 public class GenerateJavaBolt {
   private String packageName;
   
-  private String BuilDir;
+  private String BuildDir;
   
-  public GenerateJavaBolt(final String packageName, final String BuildDir) {
+  private String libName;
+  
+  public GenerateJavaBolt(final String packageName, final String BuildDir, final String libName) {
     this.packageName = packageName;
-    this.BuilDir = this.BuilDir;
+    this.BuildDir = BuildDir;
+    this.libName = libName;
   }
   
   public ArrayList<String> ArgToString(final Tuple tuple) {
@@ -134,8 +137,7 @@ public class GenerateJavaBolt {
       _builder.newLine();
       _builder.append("\t\t");
       _builder.append("System.loadLibrary(\"");
-      String _kernelName_2 = component.getKernelName();
-      _builder.append(_kernelName_2, "\t\t");
+      _builder.append(this.libName, "\t\t");
       _builder.append("\");");
       _builder.newLineIfNotEmpty();
       _builder.append("\t");
@@ -157,8 +159,8 @@ public class GenerateJavaBolt {
       _builder.newLine();
       _builder.append("\t\t");
       _builder.append("collector.emit(");
-      String _kernelName_3 = component.getKernelName();
-      _builder.append(_kernelName_3, "\t\t");
+      String _kernelName_2 = component.getKernelName();
+      _builder.append(_kernelName_2, "\t\t");
       _builder.append("(");
       {
         boolean _hasElements_1 = false;
@@ -204,8 +206,9 @@ public class GenerateJavaBolt {
       final CharSequence JavaGenerated = this.GenerateJava(component);
       String _kernelName = component.getKernelName();
       String _firstUpper = StringExtensions.toFirstUpper(_kernelName);
-      String _plus = (_firstUpper + "Bolt.java");
-      final File file = new File(_plus);
+      String _plus = ((this.BuildDir + "/") + _firstUpper);
+      String _plus_1 = (_plus + "Bolt.java");
+      final File file = new File(_plus_1);
       FileOutputStream _fileOutputStream = new FileOutputStream(file);
       final BufferedOutputStream FileWriter = new BufferedOutputStream(_fileOutputStream);
       String _string = JavaGenerated.toString();

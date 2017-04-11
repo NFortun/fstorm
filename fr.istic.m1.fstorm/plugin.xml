@@ -11,6 +11,11 @@
             class="fr.istic.m1.fstorm.modules.ReadComponents"
             name="ReadComponents">
       </module>
+      <module
+            class="fr.istic.m1.fstorm.modules.GenerateJavaClass"
+            iterative="false"
+            name="GenerateJavaClass">
+      </module>
    </extension>
 
 </plugin>

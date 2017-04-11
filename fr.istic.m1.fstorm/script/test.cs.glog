@@ -9,4 +9,6 @@ script test.cs {
     }
     pass ReadComponents:ReadComponents {
     }
+    pass GenerateJavaClass:GenerateJavaClass {
+    }
 }
