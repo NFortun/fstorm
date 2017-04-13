@@ -5,5 +5,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="xtend-gen"/>
 	<classpathentry kind="lib" path="storm-core-0.10.2.jar"/>
+	<classpathentry kind="lib" path="/home/chem/workspace/fr.istic.m1.fstorm/fr.istic.m1.fstorm/commons-cli-1.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

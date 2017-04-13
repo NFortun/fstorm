@@ -16,6 +16,35 @@
             iterative="false"
             name="GenerateJavaClass">
       </module>
+      <module
+            class="fr.istic.m1.fstorm.modules.ReadCommandLineOptions"
+            iterative="false"
+            name="ReadCommandLineOptions">
+      </module>
+   </extension>
+   <extension
+         id="fstorm"
+         point="org.eclipse.core.runtime.applications">
+         <application
+		        cardinality="singleton-global"
+		        thread="main"
+		        visible="true">
+		     <run
+		           class="fr.istic.m1.fstorm.Main">
+		     </run>
+		  </application>
+   </extension>
+   <extension
+         id="fstorm"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="fr.istic.m1.fstorm.fstorm"
+            name="fstorm">
+         <property
+               name="appName"
+               value="fstorm">
+         </property>
+      </product>
    </extension>
 
 </plugin>

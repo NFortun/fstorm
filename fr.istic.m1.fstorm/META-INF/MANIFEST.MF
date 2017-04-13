@@ -10,7 +10,10 @@ Require-Bundle: org.eclipse.core.runtime,
  com.google.guava,
  org.eclipse.xtext.xbase.lib,
  org.eclipse.xtend.lib,
- org.eclipse.xtend.lib.macro
+ org.eclipse.xtend.lib.macro,
+ org.apache.commons.cli;bundle-version="1.2.0",
+ fr.irisa.cairn.gecos.model.cdtfrontend;bundle-version="1.0.0",
+ org.eclipse.cdt.core;bundle-version="6.2.0",
+ org.eclipse.core.resources;bundle-version="3.11.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-
