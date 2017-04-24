@@ -211,11 +211,13 @@ public class GenerateJavaSpout {
           Files.createDirectory(_get_1);
         }
         String _kernelName = cmp.getKernelName();
-        String _plus = (_kernelName + "Spout.java");
+        String _firstUpper = StringExtensions.toFirstUpper(_kernelName);
+        String _plus = (_firstUpper + "Spout.java");
         Path _get_2 = Paths.get(this.odir, _plus);
         Files.deleteIfExists(_get_2);
         String _kernelName_1 = cmp.getKernelName();
-        String _plus_1 = (_kernelName_1 + "Spout.java");
+        String _firstUpper_1 = StringExtensions.toFirstUpper(_kernelName_1);
+        String _plus_1 = (_firstUpper_1 + "Spout.java");
         Path _get_3 = Paths.get(this.odir, _plus_1);
         String _string = java.toString();
         byte[] _bytes = _string.getBytes();

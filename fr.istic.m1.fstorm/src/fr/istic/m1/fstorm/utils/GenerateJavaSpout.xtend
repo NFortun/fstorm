@@ -88,8 +88,13 @@ class GenerateJavaSpout {
 		val java = GenerateJava(cmp)
 		if(!Files.exists(Paths.get(odir)))
 			Files.createDirectory(Paths.get(odir))
-		Files.deleteIfExists(Paths.get(odir, cmp.kernelName + "Spout.java"))
-		Files.write(Paths.get(odir, cmp.kernelName + "Spout.java"), java.toString().bytes, StandardOpenOption.CREATE)
+		Files.deleteIfExists(
+			Paths.get(odir, cmp.kernelName.toFirstUpper() + "Spout.java")
+		)
+		Files.write(
+			Paths.get(odir, cmp.kernelName.toFirstUpper() + "Spout.java"),
+			java.toString().bytes, StandardOpenOption.CREATE
+		)
 	} 
 	
 }
