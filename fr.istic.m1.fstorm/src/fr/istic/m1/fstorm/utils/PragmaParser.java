@@ -7,7 +7,6 @@ import fr.istic.m1.fstorm.FStormPragma;
 import fr.istic.m1.fstorm.InvalidPragmaSyntaxException;
 import fr.istic.m1.fstorm.PragmaLexicalUnit;
 import fr.istic.m1.fstorm.beans.ComponentPragma;
-import fr.istic.m1.fstorm.beans.FStormHLSPragma;
 import fr.istic.m1.fstorm.beans.TupleReturnPragma;
 
 /**
@@ -118,9 +117,6 @@ public class PragmaParser {
 					case "bolt":
 						lexer.remove(0);
 						return parseBolt(lexer);
-					case "hls":
-					case "HLS":
-						return new FStormHLSPragma();
 					case "tuple":
 						return new TupleReturnPragma();
 					default:
@@ -145,6 +141,9 @@ public class PragmaParser {
 		
 		if(!lexer.isEmpty() && lexer.get(0).isSymbol("("))
 			paramTypes = parseParamList(lexer);
+		else
+			throw new InvalidPragmaSyntaxException("expected parameter list");
+
 		if(!lexer.isEmpty() && lexer.get(0).isIdentifier("returns"))
 			returnType = parseReturns(lexer);
 		

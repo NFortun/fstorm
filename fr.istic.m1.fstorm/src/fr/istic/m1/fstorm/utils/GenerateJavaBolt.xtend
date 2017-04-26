@@ -6,6 +6,8 @@ import java.io.File
 import java.io.FileOutputStream
 import java.io.BufferedOutputStream
 import backtype.storm.tuple.Tuple
+import java.nio.file.Files
+import java.nio.file.Paths
 
 class GenerateJavaBolt {
 	String packageName;
@@ -88,6 +90,8 @@ class GenerateJavaBolt {
 	def Execute(StormComponent component) {
 		//System.out.println("Lancement de la génération")
 		val JavaGenerated = GenerateJava(component)
+		if(!Files.exists(Paths.get(BuildDir)))
+			Files.createDirectory(Paths.get(BuildDir))
 		val file = new File( BuildDir + "/" + component.kernelName.toFirstUpper() + "Bolt.java")
 		val FileWriter = new BufferedOutputStream(new FileOutputStream(file))
 		FileWriter.write(JavaGenerated.toString().bytes)

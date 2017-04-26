@@ -7,6 +7,9 @@ import gecos.core.Procedure;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
@@ -204,6 +207,13 @@ public class GenerateJavaBolt {
   public void Execute(final StormComponent component) {
     try {
       final CharSequence JavaGenerated = this.GenerateJava(component);
+      Path _get = Paths.get(this.BuildDir);
+      boolean _exists = Files.exists(_get);
+      boolean _not = (!_exists);
+      if (_not) {
+        Path _get_1 = Paths.get(this.BuildDir);
+        Files.createDirectory(_get_1);
+      }
       String _kernelName = component.getKernelName();
       String _firstUpper = StringExtensions.toFirstUpper(_kernelName);
       String _plus = ((this.BuildDir + "/") + _firstUpper);
