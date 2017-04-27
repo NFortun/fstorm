@@ -161,7 +161,9 @@ public class ReadComponents {
 	 * @throws ParameterCountException 
 	 */
 	private void checkParameters(StormComponent component) throws ParameterCountException {
+		@SuppressWarnings("unused")
 		int paramCount = component.getKernel().getSymbol().listParameters().size();
+		@SuppressWarnings("unused")
 		int pragmaParamCount = component.getParamTypes().size();
 
 		/*

@@ -62,6 +62,7 @@ public class CStruct implements CType {
 		}
 	}
 
+	@SuppressWarnings("unused")
 	private JBean setAttribute(String name, String name2) {
 		// TODO Auto-generated method stub
 		return null;

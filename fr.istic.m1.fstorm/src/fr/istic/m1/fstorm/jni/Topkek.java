@@ -11,6 +11,7 @@ public class Topkek {
 	public static void main(String[] args) {
 		WrapperEnvironment.Init();
 		Variable ji = new Variable(new JInteger(), null);
+		@SuppressWarnings("unused")
 		Variable ci = ji.toKernel(new CPrim(Primitive.INT)).get(0);
 		Variable jf = new Variable(new JFloat(), JFloat.fromFloat("12.0"));
 		jf.toKernel(new CPrim(Primitive.FLOAT));
@@ -21,6 +22,7 @@ public class Topkek {
 		new Variable(JNIType.javaFromString("Integer[]"), null).toKernel(prout);
 		
 		if (prout != null) {
+			@SuppressWarnings("unused")
 			Variable azodij = new Variable(prout, "\"hello\"");
 		}
 		CBean cb = new CBean();

@@ -1,0 +1,14 @@
+# 26/04/17 17:54:30 UTC
+# Eclipse Compiler for Java(TM) v20170228-1205, 3.12.3, Copyright IBM Corp 2000, 2015. All rights reserved.
+----------
+1. ERROR in /home/lalla/workspace/fstorm/fr.istic.m1.fstorm/xtend-gen/fr/istic/m1/fstorm/utils/GenerateJavaBolt.java (at line 3)
+	import backtype.storm.tuple.Tuple;
+	       ^^^^^^^^
+The import backtype cannot be resolved
+----------
+2. ERROR in /home/lalla/workspace/fstorm/fr.istic.m1.fstorm/xtend-gen/fr/istic/m1/fstorm/utils/GenerateJavaBolt.java (at line 34)
+	public ArrayList<String> ArgToString(final Tuple tuple) {
+	                                           ^^^^^
+Tuple cannot be resolved to a type
+----------
+2 problems (2 errors)

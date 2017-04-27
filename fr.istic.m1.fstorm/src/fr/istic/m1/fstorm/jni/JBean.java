@@ -2,10 +2,7 @@ package fr.istic.m1.fstorm.jni;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 import fr.istic.m1.fstorm.beans.CBean;
 import fr.istic.m1.fstorm.beans.CBeanAttribute;
 
