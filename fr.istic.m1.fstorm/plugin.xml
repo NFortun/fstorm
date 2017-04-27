@@ -21,6 +21,14 @@
             iterative="false"
             name="ReadCommandLineOptions">
       </module>
+      <module
+            class="fr.istic.m1.fstorm.modules.GenerateNeededBeans"
+            name="GenerateNeededBeans">
+      </module>
+      <module
+            class="fr.istic.m1.fstorm.modules.GenerateWrapper"
+            name="GenerateWrapper">
+      </module>
    </extension>
    <extension
          id="fstorm"

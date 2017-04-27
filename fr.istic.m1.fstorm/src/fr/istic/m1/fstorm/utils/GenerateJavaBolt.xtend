@@ -39,12 +39,12 @@ class GenerateJavaBolt {
 	def GenerateJava(StormComponent component) {
 		val p = component.kernel.listParameters();
 		var param = new ArrayList<String>();
-		for(var i = 0; i < p.size; i++) {
-			param.add(component.paramTypes.get(i) + " " +  p.get(i).name);
+		for(var i = 0; i < component.paramTypes.size; i++) {
+			param.add(component.paramTypes.get(i)/*+ " " +  p.get(i).name*/); // pas besoin du nom de la variable
 		}
 		
 		var argToC = new ArrayList<String>();
-		for(var i = 0; i < p.size; i++) {
+		for(var i = 0; i < component.paramTypes.size; i++) {
 			argToC.add("(" + component.paramTypes.get(i) + ") " +
 				"tuple.get(" + i + ")");
 		}

@@ -10,7 +10,7 @@ public class StormComponent {
 	private StormComponentType nodeType;
 	private List<String> paramTypes;
 	private String returnType;
-	private Procedure wrapper;
+	private String wrapper;
 	
 	public Procedure getKernel() {
 		return kernel;
@@ -52,11 +52,11 @@ public class StormComponent {
 		this.returnType = returnType;
 	}
 
-	public Procedure getWrapper() {
+	public String getWrapper() {
 		return wrapper;
 	}
 
-	public void setWrapper(Procedure wrapper) {
+	public void setWrapper(String wrapper) {
 		this.wrapper = wrapper;
 	}
 
