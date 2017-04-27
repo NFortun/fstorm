@@ -6,7 +6,7 @@ import java.util.List;
  * 
  * @author Arthur Blanleuil
  *
- * Définit un type primitif C (int, char, short, float ...)
+ * Dï¿½finit un type primitif C (int, char, short, float ...)
  */
 public class CPrim implements CType {
 
@@ -68,11 +68,11 @@ public class CPrim implements CType {
 	public void assignJava(List<String> from_vars, String to_var, JType jt) {
 		if (canBe(jt)) {
 			if (jt instanceof JInteger) {
-				WE.getBuffer().append(to_var+" = "+JInteger.fromInteger(from_vars.get(0))+";\n");
+				WrapperEnvironment.getBuffer().append(to_var+" = "+JInteger.fromInteger(from_vars.get(0))+";\n");
 			} else if (jt instanceof JFloat) {
-				WE.getBuffer().append(to_var+" = "+JFloat.fromFloat(from_vars.get(0))+";\n");
+				WrapperEnvironment.getBuffer().append(to_var+" = "+JFloat.fromFloat(from_vars.get(0))+";\n");
 			} else {
-				WE.getBuffer().append(to_var+" = "+from_vars.get(0)+";\n");
+				WrapperEnvironment.getBuffer().append(to_var+" = "+from_vars.get(0)+";\n");
 			}
 		}
 	}

@@ -12,12 +12,12 @@ public class JInteger extends JClass {
 		super("java/lang/Integer");
 
 		if (valueOf == null) {
-			getIntValue = WE.getScope().fresh();
-			String env = WE.getScope().getEnvironment();
-			WE.getBuffer().append("jmethodID "+getIntValue+" = (*"+env+")->GetMethodID("+env+", "+classVar+", \"intValue\", \"()I\");\n");
+			getIntValue = WrapperEnvironment.getScope().fresh();
+			String env = WrapperEnvironment.getScope().getEnvironment();
+			WrapperEnvironment.getBuffer().append("jmethodID "+getIntValue+" = (*"+env+")->GetMethodID("+env+", "+classVar+", \"intValue\", \"()I\");\n");
 		
-			valueOf = WE.getScope().fresh();
-			WE.getBuffer().append("jmethodID "+valueOf+" = (*"+env+")->GetMethodID("+env+", "+classVar+", \"valueOf\", \"(I)Ljava/lang/Integer\");\n");
+			valueOf = WrapperEnvironment.getScope().fresh();
+			WrapperEnvironment.getBuffer().append("jmethodID "+valueOf+" = (*"+env+")->GetMethodID("+env+", "+classVar+", \"valueOf\", \"(I)Ljava/lang/Integer\");\n");
 		}
 	}
 
@@ -33,16 +33,16 @@ public class JInteger extends JClass {
 	
 	@Override
 	public void assignKernel(String from, List<Variable> to, CType ct) {
-		WE.getBuffer().append(to.get(0).getName()+" = "+intValue(from)+";\n");
+		WrapperEnvironment.getBuffer().append(to.get(0).getName()+" = "+intValue(from)+";\n");
 	}
 
 	public static String fromInteger(String string) {
-		String env = WE.getScope().getEnvironment();
+		String env = WrapperEnvironment.getScope().getEnvironment();
 		return "(*"+env+")->CallStaticObjectMethod("+env+", "+classVar+", "+valueOf+", "+string+")";
 	}
 	
 	public static String intValue(String str) {
-		String env = WE.getScope().getEnvironment();
+		String env = WrapperEnvironment.getScope().getEnvironment();
 		return "(*"+env+")->CallIntMethod("+env+", "+str+", "+getIntValue+")";
 	}	
 	

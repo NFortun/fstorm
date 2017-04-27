@@ -27,7 +27,7 @@ public interface JNIType {
 			return new JVoid();
 		default:
 			CBean cb;
-			if ((cb = WE.getBeanScope().getBean(s)) != null) {
+			if ((cb = WrapperEnvironment.getBeanScope().getBean(s)) != null) {
 				return new JBean(cb);
 			} else if (s.substring(s.length()-2,s.length()).equals("[]")) {
 				return new JArray(javaFromString(s.substring(0,s.length()-2)));
@@ -55,8 +55,8 @@ public interface JNIType {
 		case "String":
 			return cFromString("*(char)");
 		default:
-			if (WE.getBeanScope().getBean(s) != null) {
-				return new CStruct(WE.getBeanScope().getBean(s));
+			if (WrapperEnvironment.getBeanScope().getBean(s) != null) {
+				return new CStruct(WrapperEnvironment.getBeanScope().getBean(s));
 			} else if (s.charAt(0) == '*') {
 				return new CArray(cFromString(s.substring(2, s.length()-1)));
 			} else if (s.substring(0,2).equals("[]")) {

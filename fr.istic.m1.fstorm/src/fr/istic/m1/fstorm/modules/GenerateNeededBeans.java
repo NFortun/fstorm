@@ -6,7 +6,7 @@ import java.util.List;
 import fr.istic.m1.fstorm.beans.CBean;
 import fr.istic.m1.fstorm.beans.CBeanAttribute;
 import fr.istic.m1.fstorm.beans.StormComponent;
-import fr.istic.m1.fstorm.jni.WE;
+import fr.istic.m1.fstorm.jni.WrapperEnvironment;
 import fr.istic.m1.fstorm.utils.GenerateCBean;
 import gecos.types.AliasType;
 import gecos.types.ArrayType;
@@ -56,7 +56,7 @@ public class GenerateNeededBeans {
 		
 		for (CBean cb : ret) {
 			//System.out.println(CBeanGenerator.generate(cb));
-			WE.getBeanScope().addBean(cb);
+			WrapperEnvironment.getBeanScope().addBean(cb);
 		}
 
 		return ret;

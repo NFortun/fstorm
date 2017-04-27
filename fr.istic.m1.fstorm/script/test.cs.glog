@@ -27,4 +27,6 @@ script test.cs {
     }
     pass GenerateWrapper:GenerateWrapper {
     }
+    pass WriteFinalCFile:WriteFinalCFile {
+    }
 }

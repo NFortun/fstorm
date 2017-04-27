@@ -57,7 +57,7 @@ public class CStruct implements CType {
 				
 				Variable a = new Variable(jattr, null);
 				ct.assignJava(Arrays.asList(from+"."+attr.getName()), a.getName(), jattr);
-				WE.getBuffer().append(((JBean)jt).setAttribute(to_var, attr.getName(), a.getName())+";\n");
+				WrapperEnvironment.getBuffer().append(((JBean)jt).setAttribute(to_var, attr.getName(), a.getName())+";\n");
 			}
 		}
 	}

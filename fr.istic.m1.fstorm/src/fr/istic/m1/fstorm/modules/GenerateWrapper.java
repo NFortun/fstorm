@@ -23,7 +23,7 @@ public class GenerateWrapper {
 	}
 	
 	public void compute() {
-		WE.Init();
+		WrapperEnvironment.Init();
 		
 		if (_inArg.getNodeType() == StormComponentType.SPOUT) {
 			JType jret_type = JNIType.javaFromString(_inArg.getReturnType());
@@ -35,16 +35,16 @@ public class GenerateWrapper {
 			
 			// prototype
 			buffer_final.append("JNIEXPORT "+jret_type.getJniType()+" JNICALL Java_"+className+"_"+_inArg.getKernelName()+"() {\n");
-			buffer_final.append("JNIEnv* "+WE.getScope().getEnvironment()+", jclass "+WE.getScope().getCallingClass());
+			buffer_final.append("JNIEnv* "+WrapperEnvironment.getScope().getEnvironment()+", jclass "+WrapperEnvironment.getScope().getCallingClass());
 			
 			// corps de la fonction
 			CType ret_type = JNIType.cFromString(getTypeName(_inArg.getKernel().getSymbol().getType().asFunction().getReturnType()));
 			Variable ret = new Variable(ret_type, _inArg.getKernelName()+"()");
 			Variable jret = ret.toJava(jret_type);
-			WE.getBuffer().append("return "+jret.getName()+";\n");
+			WrapperEnvironment.getBuffer().append("return "+jret.getName()+";\n");
 			
 			// ecriture du corps et fermeture de la fonction
-			buffer_final.append(WE.getBuffer().toString());
+			buffer_final.append(WrapperEnvironment.getBuffer().toString());
 			buffer_final.append("\n}\n");
 			
 			System.out.println(buffer_final.toString());
@@ -66,11 +66,11 @@ public class GenerateWrapper {
 			
 			if (jret_type == null) {
 				System.out.println(_inArg.getReturnType()+" is not a valid type");
-				System.out.println(WE.getBeanScope().getAllBeans());
+				System.out.println(WrapperEnvironment.getBeanScope().getAllBeans());
 			}
 			// prototype
 			buffer_final.append("JNIEXPORT "+jret_type.getJniType()+" JNICALL Java_"+className+"_"+_inArg.getKernelName()+"(");
-			buffer_final.append("JNIEnv* "+WE.getScope().getEnvironment()+", jclass "+WE.getScope().getCallingClass());
+			buffer_final.append("JNIEnv* "+WrapperEnvironment.getScope().getEnvironment()+", jclass "+WrapperEnvironment.getScope().getCallingClass());
 			
 			// ecriture des parametres
 			for (String t : _inArg.getParamTypes()) {
@@ -111,7 +111,7 @@ public class GenerateWrapper {
 				ret = new Variable(ret_type, str);
 				jret = ret.toJava(jret_type);
 			} else {
-				WE.getBuffer().append(str);
+				WrapperEnvironment.getBuffer().append(str);
 			}
 			
 			// release des eventuels tableaux/strings
@@ -131,11 +131,11 @@ public class GenerateWrapper {
 
 			// return si non void bolt
 			if (!(ret_type instanceof CVoid) && ret_type != null) {
-				WE.getBuffer().append("return "+jret.getName()+";\n");
+				WrapperEnvironment.getBuffer().append("return "+jret.getName()+";\n");
 			}
 			
 			// fin de wrapper
-			buffer_final.append(WE.getBuffer().toString());
+			buffer_final.append(WrapperEnvironment.getBuffer().toString());
 			buffer_final.append("\n}\n");
 			
 			System.out.println(buffer_final.toString());

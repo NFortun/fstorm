@@ -29,6 +29,10 @@
             class="fr.istic.m1.fstorm.modules.GenerateWrapper"
             name="GenerateWrapper">
       </module>
+      <module
+            class="fr.istic.m1.fstorm.modules.WriteFinalCFile"
+            name="WriteFinalCFile">
+      </module>
    </extension>
    <extension
          id="fstorm"

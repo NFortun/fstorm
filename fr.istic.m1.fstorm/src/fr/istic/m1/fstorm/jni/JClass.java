@@ -20,12 +20,12 @@ public class JClass implements JType {
 	public JClass(String _className) {
 		className = _className;
 		
-		if ((classVar = WE.getScope().getClass(className)) == null) {
-			classVar = WE.getScope().addClass(className);
-			String env = WE.getScope().getEnvironment();
-			WE.getBuffer().append("jclass "+classVar+" = (*"+env+")->FindClass("+env+", \""+className+"\");\n");
-			constructorVar = WE.getScope().fresh();
-			WE.getBuffer().append("jmethodID "+constructorVar+" = (*"+env+")->GetMethodID("+env+", "+classVar+", \"<init>\", \"()V\");\n");
+		if ((classVar = WrapperEnvironment.getScope().getClass(className)) == null) {
+			classVar = WrapperEnvironment.getScope().addClass(className);
+			String env = WrapperEnvironment.getScope().getEnvironment();
+			WrapperEnvironment.getBuffer().append("jclass "+classVar+" = (*"+env+")->FindClass("+env+", \""+className+"\");\n");
+			constructorVar = WrapperEnvironment.getScope().fresh();
+			WrapperEnvironment.getBuffer().append("jmethodID "+constructorVar+" = (*"+env+")->GetMethodID("+env+", "+classVar+", \"<init>\", \"()V\");\n");
 		}
 	}
 

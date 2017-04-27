@@ -22,8 +22,12 @@ public class CArray implements CType {
 			return null;
 	
 		JArray jr = (JArray)jt;
+<<<<<<< HEAD
+		String env = WrapperEnvironment.getScope().getEnvironment();
+=======
 		@SuppressWarnings("unused")
 		String env = WE.getScope().getEnvironment();
+>>>>>>> refs/remotes/Docteur-Lalla/master
 		
 		Variable arrs = v.get(0);
 		Variable ns   = v.get(1);
@@ -43,7 +47,7 @@ public class CArray implements CType {
 	}
 
 	public String newArray(JType jt, String size) {
-		String env = WE.getScope().getEnvironment();
+		String env = WrapperEnvironment.getScope().getEnvironment();
 		if (jt instanceof JPrim) {
 			String b = ((JPrim)base).getPrim().toString();
 			b = b.substring(0, 1).toUpperCase() + b.substring(1);
@@ -56,7 +60,7 @@ public class CArray implements CType {
 	}
 
 	public String setArrayRegion(JType jt, String arr, String size, String region) {
-		String env = WE.getScope().getEnvironment();
+		String env = WrapperEnvironment.getScope().getEnvironment();
 		if (jt instanceof JPrim) {
 			String b = ((JPrim)base).getPrim().toString();
 			b = b.substring(0, 1).toUpperCase() + b.substring(1);
@@ -78,16 +82,16 @@ public class CArray implements CType {
 		if (base instanceof CPrim && jr.getBase() instanceof JPrim) {
 			String b = ((JPrim)base).getPrim().toString();
 			b = b.substring(0, 1).toUpperCase() + b.substring(1);
-			WE.getBuffer().append(to_var+" = "+newArray(jt, ns)+";\n");
-			WE.getBuffer().append(setArrayRegion(jt, to_var, ns, arrs)+";\n");
+			WrapperEnvironment.getBuffer().append(to_var+" = "+newArray(jt, ns)+";\n");
+			WrapperEnvironment.getBuffer().append(setArrayRegion(jt, to_var, ns, arrs)+";\n");
 		} else if (base.canBe(jr.getBase())) {
-			String env = WE.getScope().getEnvironment();
-			String is = WE.getScope().fresh();
-			WE.getBuffer().append("for (int "+is+"=0; "+is+" < "+ns+"; ++"+is+") {\n");
+			String env = WrapperEnvironment.getScope().getEnvironment();
+			String is = WrapperEnvironment.getScope().fresh();
+			WrapperEnvironment.getBuffer().append("for (int "+is+"=0; "+is+" < "+ns+"; ++"+is+") {\n");
 			Variable tmp = new Variable(jr.getBase(), null);
 			base.assignJava(Arrays.asList(arrs+"["+is+"]"), tmp.getName(), jr.getBase());
-			WE.getBuffer().append("*("+WE.getScope().getEnvironment()+")->SetObjectArrayElement("+env+", "+to_var+", "+is+", "+tmp.getName()+");\n");
-			WE.getBuffer().append("}\n");
+			WrapperEnvironment.getBuffer().append("*("+WrapperEnvironment.getScope().getEnvironment()+")->SetObjectArrayElement("+env+", "+to_var+", "+is+", "+tmp.getName()+");\n");
+			WrapperEnvironment.getBuffer().append("}\n");
 		}
 	}
 
