@@ -6,10 +6,10 @@ import java.util.List;
  * 
  * @author Arthur Blanleuil
  *
- * Définit une classe Java dans la JNI.
- * Cette classe s'occupe de générer le code
+ * Dï¿½finit une classe Java dans la JNI.
+ * Cette classe s'occupe de gï¿½nï¿½rer le code
  * d'acquisition de la classe dans la JNI, ainsi
- * que de son constructeur par défaut.
+ * que de son constructeur par dï¿½faut.
  */
 public class JClass implements JType {
 
@@ -20,12 +20,12 @@ public class JClass implements JType {
 	public JClass(String className) {
 		this.className = className;
 		
-		if ((classVar = WE.getScope().getClass(className)) == null) {
-			classVar = WE.getScope().addClass(className);
-			String env = WE.getScope().getEnvironment();
-			WE.getBuffer().append("jclass "+classVar+" = (*"+env+")->FindClass("+env+", \""+className+"\");\n");
-			constructorVar = WE.getScope().fresh();
-			WE.getBuffer().append("jmethodID "+constructorVar+" = (*"+env+")->GetMethodID("+env+", "+classVar+", \"<init>\", \"()V\");\n");
+		if ((classVar = WrapperEnvironment.getScope().getClass(className)) == null) {
+			classVar = WrapperEnvironment.getScope().addClass(className);
+			String env = WrapperEnvironment.getScope().getEnvironment();
+			WrapperEnvironment.getBuffer().append("jclass "+classVar+" = (*"+env+")->FindClass("+env+", \""+className+"\");\n");
+			constructorVar = WrapperEnvironment.getScope().fresh();
+			WrapperEnvironment.getBuffer().append("jmethodID "+constructorVar+" = (*"+env+")->GetMethodID("+env+", "+classVar+", \"<init>\", \"()V\");\n");
 		}
 	}
 

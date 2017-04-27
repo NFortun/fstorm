@@ -23,7 +23,7 @@ public class JArray implements JType, JNIReleaseable {
 	@Override
 	public List<Variable> toKernel(Variable v, CType ct) {
 
-		String env = WE.getScope().getEnvironment();
+		String env = WrapperEnvironment.getScope().getEnvironment();
 		Variable s = new Variable(new CPrim(Primitive.INT)
 				, "(*"+env+")->GetArrayLength("+env+", "+v.getName()+")");
 		
@@ -35,13 +35,13 @@ public class JArray implements JType, JNIReleaseable {
 		} else {
 			Variable arr = new Variable(ct, "malloc("+s.getName()+"*sizeof("+((CArray)ct).getBase().getJniType()+"))");
 			Variable is = new Variable(new CPrim(Primitive.INT), null);
-			WE.getBuffer().append("for ("+is.getName()+"=0; "+is.getName()+"<"+s.getName()+"; ++"+is.getName()+") {\n");
+			WrapperEnvironment.getBuffer().append("for ("+is.getName()+"=0; "+is.getName()+"<"+s.getName()+"; ++"+is.getName()+") {\n");
 			
 			Variable elem = new Variable(((CArray)ct).getBase(), null);
 			base.assignKernel("(*"+env+")->GetObjectArrayElement("+env+", "+v.getName()+", "+is.getName()+")", Arrays.asList(elem), ((CArray)ct).getBase());
 			
-			WE.getBuffer().append(arr.getName()+"["+is.getName()+"] = "+elem.getName()+";\n");
-			WE.getBuffer().append("}\n");
+			WrapperEnvironment.getBuffer().append(arr.getName()+"["+is.getName()+"] = "+elem.getName()+";\n");
+			WrapperEnvironment.getBuffer().append("}\n");
 			return new ArrayList<Variable>(Arrays.asList(arr, s));
 		}
 	}
@@ -54,14 +54,14 @@ public class JArray implements JType, JNIReleaseable {
 		if (base instanceof JPrim) {
 			String b = ((JPrim)base).getPrim().toString();
 			b = b.substring(0, 1).toUpperCase() + b.substring(1);
-			return "(*"+WE.getScope().getEnvironment()+")->Get"+b+"ArrayElements("+WE.getScope().getEnvironment()+", "+name+", 0)";
+			return "(*"+WrapperEnvironment.getScope().getEnvironment()+")->Get"+b+"ArrayElements("+WrapperEnvironment.getScope().getEnvironment()+", "+name+", 0)";
 		}
 
 		return null;
 	}
 	
 	public String getArrayLength(String name) {
-		return "(*"+WE.getScope().getEnvironment()+")->GetArrayLength("+WE.getScope().getEnvironment()+", "+name+")";
+		return "(*"+WrapperEnvironment.getScope().getEnvironment()+")->GetArrayLength("+WrapperEnvironment.getScope().getEnvironment()+", "+name+")";
 	}
 
 	@Override
@@ -85,9 +85,9 @@ public class JArray implements JType, JNIReleaseable {
 		if (base instanceof JPrim) {
 			String b = ((JPrim)base).getPrim().toString();
 			b = b.substring(0, 1).toUpperCase() + b.substring(1);
-			String env = WE.getScope().getEnvironment();
+			String env = WrapperEnvironment.getScope().getEnvironment();
 			
-			WE.getBuffer().append("(*"+env+")->Release"+b+"ArrayElements("+env+", "+arr+", "+body+");\n");
+			WrapperEnvironment.getBuffer().append("(*"+env+")->Release"+b+"ArrayElements("+env+", "+arr+", "+body+");\n");
 		}
 	}
 	

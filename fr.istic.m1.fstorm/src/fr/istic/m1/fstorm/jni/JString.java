@@ -8,10 +8,10 @@ import java.util.List;
  * 
  * @author Arthur Blanleuil
  * 
- * Définit la classe String de Java
- * dans la JNI. Cette classe n'implémente
+ * Dï¿½finit la classe String de Java
+ * dans la JNI. Cette classe n'implï¿½mente
  * pas l'interface "JClass" car elle n'est pas
- * réellement manipulée comme tel dans la JNI
+ * rï¿½ellement manipulï¿½e comme tel dans la JNI
  */
 public class JString implements JType, JNIReleaseable {
 
@@ -30,14 +30,14 @@ public class JString implements JType, JNIReleaseable {
 		if (!canBe(ct))
 			return null;
 
-		String env = WE.getScope().getEnvironment();
+		String env = WrapperEnvironment.getScope().getEnvironment();
 		return new ArrayList<>(Arrays.asList(new Variable(ct, "(*"+env+")->GetStringUTFChars("+env+", "+v.getName()+", 0)")));
 	}
 
 	@Override
 	public void assignKernel(String from_var, List<Variable> to_vars, CType ct) {
-		String env = WE.getScope().getEnvironment();
-		WE.getBuffer().append(to_vars.get(0).getName()+" = (*"+env+")->GetStringUTFChars("+env+", "+from_var+", 0)");
+		String env = WrapperEnvironment.getScope().getEnvironment();
+		WrapperEnvironment.getBuffer().append(to_vars.get(0).getName()+" = (*"+env+")->GetStringUTFChars("+env+", "+from_var+", 0)");
 	}
 
 	@Override
@@ -47,7 +47,7 @@ public class JString implements JType, JNIReleaseable {
 
 	@Override
 	public void release(String arr, String body) {
-		String env = WE.getScope().getEnvironment();
-		WE.getBuffer().append("(*"+env+")->ReleaseStringUTFChars("+env+", "+arr+", "+body+");\n");
+		String env = WrapperEnvironment.getScope().getEnvironment();
+		WrapperEnvironment.getBuffer().append("(*"+env+")->ReleaseStringUTFChars("+env+", "+arr+", "+body+");\n");
 	}
 }

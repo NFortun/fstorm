@@ -11,13 +11,13 @@ public class JFloat extends JClass {
 	public JFloat() {
 		super("java/lang/Float");
 		
-		getFloatValue = WE.getScope().fresh();
-		String env = WE.getScope().getEnvironment();
-		WE.getBuffer().append("jmethodID "+getFloatValue+" = (*"+env+")->GetMethodID("
+		getFloatValue = WrapperEnvironment.getScope().fresh();
+		String env = WrapperEnvironment.getScope().getEnvironment();
+		WrapperEnvironment.getBuffer().append("jmethodID "+getFloatValue+" = (*"+env+")->GetMethodID("
 				+env+", "+classVar+", \"floatValue\", \"()F\");\n");
 		
-		fromFloat = WE.getScope().fresh();
-		WE.getBuffer().append("jmethodID "+fromFloat+" = (*"+env+")->GetStaticMethodID("
+		fromFloat = WrapperEnvironment.getScope().fresh();
+		WrapperEnvironment.getBuffer().append("jmethodID "+fromFloat+" = (*"+env+")->GetStaticMethodID("
 				+env+", "+classVar+", \"valueOf\", \"(F)Ljava/lang/Float\");\n");
 	}
 
@@ -31,12 +31,12 @@ public class JFloat extends JClass {
 	}
 
 	public static String fromFloat(String string) {
-		String env = WE.getScope().getEnvironment();
+		String env = WrapperEnvironment.getScope().getEnvironment();
 		return "(*"+env+")->CallStaticObjectMethod("+env+", "+classVar+", "+fromFloat+", "+string+")";
 	}
 	
 	public static String floatValue(String str) {
-		String env = WE.getScope().getEnvironment();
+		String env = WrapperEnvironment.getScope().getEnvironment();
 		return "(*"+env+")->CallFloatMethod("+env+", "+str+", "+getFloatValue+")";
 	}
 	
@@ -70,9 +70,9 @@ public class JFloat extends JClass {
 	public void assignKernel(String from_var, List<Variable> to_vars, CType ct) {
 		if (canBe(ct)) {
 			if (ct instanceof CPrim)
-				WE.getBuffer().append(to_vars.get(0)+" = "+floatValue(from_var)+";\n");
+				WrapperEnvironment.getBuffer().append(to_vars.get(0)+" = "+floatValue(from_var)+";\n");
 			else
-				WE.getBuffer().append(to_vars.get(0)+" = "+from_var+";\n;");
+				WrapperEnvironment.getBuffer().append(to_vars.get(0)+" = "+from_var+";\n;");
 		}
 	}
 	

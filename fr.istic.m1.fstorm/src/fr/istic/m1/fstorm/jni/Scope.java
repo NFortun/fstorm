@@ -96,10 +96,10 @@ public class Scope {
 				nname = nname.substring(0, 1).toUpperCase() + nname.substring(1);
 				
 				String get = fresh();
-				WE.getBuffer().append("jmethodID "+get+" = (*"+getEnvironment()+")->GetMethodID("+getEnvironment()+", "+getClass(b.getName())+", \"get"+nname+"\", "
+				WrapperEnvironment.getBuffer().append("jmethodID "+get+" = (*"+getEnvironment()+")->GetMethodID("+getEnvironment()+", "+getClass(b.getName())+", \"get"+nname+"\", "
 						+"\"()"+JNIType.javaFromString(attr.getTypeName()).getSignature()+"\");\n");
 				String set = fresh();
-				WE.getBuffer().append("jmethodID "+set+" = (*"+getEnvironment()+")->GetMethodID("+getEnvironment()+", "+getClass(b.getName())+", \"set"+nname+"\", "
+				WrapperEnvironment.getBuffer().append("jmethodID "+set+" = (*"+getEnvironment()+")->GetMethodID("+getEnvironment()+", "+getClass(b.getName())+", \"set"+nname+"\", "
 						+"\"("+JNIType.javaFromString(attr.getTypeName()).getSignature()+")V\");\n");
 				
 				

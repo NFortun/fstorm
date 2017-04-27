@@ -7,7 +7,7 @@ import java.util.List;
  * 
  * @author Arthur Blanleuil
  *
- * Définit un type primitif Java dans la JNI
+ * Dï¿½finit un type primitif Java dans la JNI
  * (jint, jchar, jshort, jfloat ...)
  */
 public class JPrim implements JType {
@@ -64,7 +64,7 @@ public class JPrim implements JType {
 	@Override                                                                                                                                                                                                                                                      
 	public void assignKernel(String from_var, List<Variable> to_vars, CType ct) {
 		if (canBe(ct)) {
-			WE.getBuffer().append(to_vars.get(0).getName()+" = "+from_var+";\n");
+			WrapperEnvironment.getBuffer().append(to_vars.get(0).getName()+" = "+from_var+";\n");
 		}
 	}
 

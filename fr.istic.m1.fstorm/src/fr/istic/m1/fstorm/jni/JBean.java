@@ -21,14 +21,14 @@ public class JBean implements JType {
 		
 		this.bean = bean;
 
-		if ((classVar = WE.getScope().getClass(bean.getName())) == null) {
-			classVar = WE.getScope().addClass(bean.getName());
-			String env = WE.getScope().getEnvironment();
-			WE.getBuffer().append("jclass "+classVar+" = (*"+env+")->FindClass("+env+", \""+bean.getName()+"\");\n");
-			constructorVar = WE.getScope().fresh();
-			WE.getBuffer().append("jmethodID "+constructorVar+" = (*"+env+")->GetMethodID("+env+", "+classVar+", \"<init>\", \"()V\");\n");
+		if ((classVar = WrapperEnvironment.getScope().getClass(bean.getName())) == null) {
+			classVar = WrapperEnvironment.getScope().addClass(bean.getName());
+			String env = WrapperEnvironment.getScope().getEnvironment();
+			WrapperEnvironment.getBuffer().append("jclass "+classVar+" = (*"+env+")->FindClass("+env+", \""+bean.getName()+"\");\n");
+			constructorVar = WrapperEnvironment.getScope().fresh();
+			WrapperEnvironment.getBuffer().append("jmethodID "+constructorVar+" = (*"+env+")->GetMethodID("+env+", "+classVar+", \"<init>\", \"()V\");\n");
 			
-			WE.getScope().addBean(bean, classVar);
+			WrapperEnvironment.getScope().addBean(bean, classVar);
 		}
 	}
 
@@ -65,12 +65,12 @@ public class JBean implements JType {
 			
 			Variable a = new Variable(jt, getAttribute(from_var, attr.getName(), jt));
 			List<Variable> struct_attribs = jt.toKernel(a, cattr);
-			WE.getBuffer().append(to_vars.get(0).getName()+"."+attr.getName()+" = "+struct_attribs.get(0).getName()+";\n");
+			WrapperEnvironment.getBuffer().append(to_vars.get(0).getName()+"."+attr.getName()+" = "+struct_attribs.get(0).getName()+";\n");
 		}
 	}
 
 	public String getAttribute(String struct, String attrname, JType jt) {
-		String env = WE.getScope().getEnvironment();
+		String env = WrapperEnvironment.getScope().getEnvironment();
 		String b;
 		if (jt instanceof JPrim) {
 			b = ((JPrim) jt).getPrim().toString();
@@ -79,16 +79,16 @@ public class JBean implements JType {
 			b = "Object";
 		}
 
-		return "(*"+env+")->Call"+b+"Method("+env+", "+struct+", "+WE.getScope().getGetter(bean.getName(), attrname)+")";
+		return "(*"+env+")->Call"+b+"Method("+env+", "+struct+", "+WrapperEnvironment.getScope().getGetter(bean.getName(), attrname)+")";
 	}
 
 	public String setAttribute(String name, String name2, String name3) {
-		String env = WE.getScope().getEnvironment();
-		return "(*"+env+")->CallVoidMethod("+env+", "+name+", "+WE.getScope().getSetter(bean.getName(),name2)+", "+name3+")";
+		String env = WrapperEnvironment.getScope().getEnvironment();
+		return "(*"+env+")->CallVoidMethod("+env+", "+name+", "+WrapperEnvironment.getScope().getSetter(bean.getName(),name2)+", "+name3+")";
 	}
 	
 	public String newInstance() {
-		String env = WE.getScope().getEnvironment();
+		String env = WrapperEnvironment.getScope().getEnvironment();
 		return "(*"+env+")->NewObject("+env+", "+classVar+", "+constructorVar+")";
 	}
 

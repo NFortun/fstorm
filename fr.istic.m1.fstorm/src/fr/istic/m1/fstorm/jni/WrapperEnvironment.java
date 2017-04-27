@@ -4,17 +4,17 @@ package fr.istic.m1.fstorm.jni;
  * 
  * @author Arthur Blanleuil
  * 
- * Décrit l'environement d'une fonction wrapper
- * pour la JNI. Cette classe agit à la manière d'un
- * Service Provider, donnant accès en global à
- * un Scope contenant les variables créées, un StringBuffer
- * contenant le code généré, et un BeanScope contenant
- * les informations des structures C à convertir en Java.
+ * Dï¿½crit l'environement d'une fonction wrapper
+ * pour la JNI. Cette classe agit ï¿½ la maniï¿½re d'un
+ * Service Provider, donnant accï¿½s en global ï¿½
+ * un Scope contenant les variables crï¿½ï¿½es, un StringBuffer
+ * contenant le code gï¿½nï¿½rï¿½, et un BeanScope contenant
+ * les informations des structures C ï¿½ convertir en Java.
  * 
- * Avant chaque génération de code, le WE devra être initialisé
- * par la méthode statique Init().
+ * Avant chaque gï¿½nï¿½ration de code, le WE devra ï¿½tre initialisï¿½
+ * par la mï¿½thode statique Init().
  */
-public final class WE {
+public final class WrapperEnvironment {
 	private static BeanScope bscope = new BeanScope();
 	private static Scope scope = null;
 	private static StringBuffer buffer = null;

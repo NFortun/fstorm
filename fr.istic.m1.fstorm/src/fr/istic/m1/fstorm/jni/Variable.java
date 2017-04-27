@@ -18,21 +18,21 @@ public class Variable {
     }
     
     public Variable(JType jtype, String value, boolean isParam) {
-        _name = WE.getScope().fresh();
+        _name = WrapperEnvironment.getScope().fresh();
         _jtype = jtype;
         _ctype = null;
 
         if (!isParam)
-        	WE.getBuffer().append(_jtype.getJniType()+" "+_name+((value != null) ? " = "+value+";\n" : ";\n"));
+        	WrapperEnvironment.getBuffer().append(_jtype.getJniType()+" "+_name+((value != null) ? " = "+value+";\n" : ";\n"));
     }
 
     public Variable(CType ctype, String value, boolean isParam) {
-        _name = WE.getScope().fresh();
+        _name = WrapperEnvironment.getScope().fresh();
         _jtype = null;
         _ctype = ctype;
 
         if (!isParam)
-        	WE.getBuffer().append(_ctype.getJniType()+" "+_name+((value != null) ? " = "+value+";\n" : ";\n"));
+        	WrapperEnvironment.getBuffer().append(_ctype.getJniType()+" "+_name+((value != null) ? " = "+value+";\n" : ";\n"));
     }
     
     public List<Variable> toKernel(CType c) {

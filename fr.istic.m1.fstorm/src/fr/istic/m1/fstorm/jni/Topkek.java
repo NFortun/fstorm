@@ -9,7 +9,7 @@ import fr.istic.m1.fstorm.beans.CBeanAttribute;
 
 public class Topkek {
 	public static void main(String[] args) {
-		WE.Init();
+		WrapperEnvironment.Init();
 		Variable ji = new Variable(new JInteger(), null);
 		Variable ci = ji.toKernel(new CPrim(Primitive.INT)).get(0);
 		Variable jf = new Variable(new JFloat(), JFloat.fromFloat("12.0"));
@@ -40,7 +40,7 @@ public class Topkek {
 		cstruct.toJava(cbt);
 		
 		carr.get(0).getCType().toJava(carr, new JArray(new JInteger()));
-		System.out.println(WE.getBuffer().toString());
+		System.out.println(WrapperEnvironment.getBuffer().toString());
 		System.out.println();
 	}
 }
