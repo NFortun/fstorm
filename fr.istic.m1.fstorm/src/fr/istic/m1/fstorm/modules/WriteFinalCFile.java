@@ -43,7 +43,7 @@ public class WriteFinalCFile {
 
 		try {
 			Files.deleteIfExists(
-				Paths.get(odir, "kernel.c")
+				Paths.get(odir, Paths.get(filename).getFileName().toString())
 			);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -56,7 +56,7 @@ public class WriteFinalCFile {
 		
 		try {
 			Files.write(
-					Paths.get(odir, "kernel.c"),
+					Paths.get(odir, Paths.get(filename).getFileName().toString()),
 					content.getBytes(), StandardOpenOption.CREATE
 			);
 		} catch (IOException e) {
