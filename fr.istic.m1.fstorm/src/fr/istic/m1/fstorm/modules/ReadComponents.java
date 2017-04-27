@@ -164,8 +164,10 @@ public class ReadComponents {
 		int paramCount = component.getKernel().getSymbol().listParameters().size();
 		int pragmaParamCount = component.getParamTypes().size();
 
+		/*
 		if(paramCount != pragmaParamCount)
 			throw new ParameterCountException(pragmaParamCount, paramCount);
+		*/
 	}
 
 	/**

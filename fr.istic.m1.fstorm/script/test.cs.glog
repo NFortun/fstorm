@@ -11,4 +11,20 @@ script test.cs {
     }
     pass GenerateJavaClass:GenerateJavaClass {
     }
+    pass GenerateNeededBeans:GenerateNeededBeans {
+    }
+    pass GenerateWrapper:GenerateWrapper {
+    }
+    pass GenerateNeededBeans:GenerateNeededBeans {
+    }
+    pass GenerateWrapper:GenerateWrapper {
+    }
+    pass GenerateNeededBeans:GenerateNeededBeans {
+    }
+    pass GenerateWrapper:GenerateWrapper {
+    }
+    pass GenerateNeededBeans:GenerateNeededBeans {
+    }
+    pass GenerateWrapper:GenerateWrapper {
+    }
 }

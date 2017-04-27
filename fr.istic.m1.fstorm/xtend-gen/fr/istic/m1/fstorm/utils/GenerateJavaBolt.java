@@ -61,17 +61,13 @@ public class GenerateJavaBolt {
       Procedure _kernel = component.getKernel();
       final EList<ParameterSymbol> p = _kernel.listParameters();
       ArrayList<String> param = new ArrayList<String>();
-      for (int i = 0; (i < p.size()); i++) {
+      for (int i = 0; (i < component.getParamTypes().size()); i++) {
         List<String> _paramTypes = component.getParamTypes();
         String _get = _paramTypes.get(i);
-        String _plus = (_get + " ");
-        ParameterSymbol _get_1 = p.get(i);
-        String _name = _get_1.getName();
-        String _plus_1 = (_plus + _name);
-        param.add(_plus_1);
+        param.add(_get);
       }
       ArrayList<String> argToC = new ArrayList<String>();
-      for (int i = 0; (i < p.size()); i++) {
+      for (int i = 0; (i < component.getParamTypes().size()); i++) {
         List<String> _paramTypes = component.getParamTypes();
         String _get = _paramTypes.get(i);
         String _plus = ("(" + _get);
