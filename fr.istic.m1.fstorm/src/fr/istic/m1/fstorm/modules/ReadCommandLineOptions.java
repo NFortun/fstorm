@@ -1,7 +1,5 @@
 package fr.istic.m1.fstorm.modules;
 
-import java.util.Arrays;
-
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.HelpFormatter;
@@ -50,29 +48,9 @@ public class ReadCommandLineOptions {
 			params.setInputFile(leftOverArgs[0]);
 		else {
 			HelpFormatter help = new HelpFormatter();
-			help.printHelp("java -jar fstorm-1.0.jar", options);
+			help.printHelp("fstorm.sh", options);
 		}
 		
 		return params;
-	}
-	
-	public static void main(String[] args) {
-		ReadCommandLineOptions opts =
-			new ReadCommandLineOptions(
-				(String[]) Arrays.asList("--package", "whatever.test", "--odir", "baka", "-v", "test.c").toArray());
-		
-		try {
-			FStormParameters params = opts.compute();
-			System.out.println("-m : " + params.isMakefile());
-			System.out.println("-v : " + params.isVerbose());
-			System.out.println("-V : " + params.isVersion());
-			System.out.println("-p : " + params.getPack());
-			System.out.println("-o : " + params.getOdir());
-			System.out.println("file : " + params.getInputFile());
-		}
-		
-		catch(Exception e) {
-			e.printStackTrace();
-		}
 	}
 }

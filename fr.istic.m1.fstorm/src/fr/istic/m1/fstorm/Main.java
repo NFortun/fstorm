@@ -29,7 +29,12 @@ public class Main implements IApplication {
 		try {
 			params = (new ReadCommandLineOptions(args).compute());
 			
-			if(params.getInputFile() == null)
+			if(params.isVersion()) {
+				System.out.println("fstorm 1.0\nCode generator F-Storm by FPGA-Storm team at Istic.");
+				return IApplication.EXIT_OK;
+			}
+			
+			else if(params.getInputFile() == null)
 				return IApplication.EXIT_OK;
 			
 			String filename = params.getInputFile();
