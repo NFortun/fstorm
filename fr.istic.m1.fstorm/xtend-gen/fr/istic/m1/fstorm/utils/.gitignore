@@ -5,3 +5,5 @@
 /.GenerateJavaSpout.xtendbin
 /GenerateJavaSpout.java
 /.GenerateCBean.java._trace
+/.GenerateCBean.xtendbin
+/GenerateCBean.java

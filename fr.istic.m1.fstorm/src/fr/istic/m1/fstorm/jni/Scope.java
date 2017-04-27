@@ -1,6 +1,5 @@
 package fr.istic.m1.fstorm.jni;
 
-import java.beans.Beans;
 import java.util.HashMap;
 import java.util.Map;
 

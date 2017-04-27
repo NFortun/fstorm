@@ -12,6 +12,8 @@ import fr.istic.m1.fstorm.beans.FStormParameters;
 import fr.istic.m1.fstorm.beans.StormComponent;
 import fr.istic.m1.fstorm.modules.FindAllPragmas;
 import fr.istic.m1.fstorm.modules.GenerateJavaClass;
+import fr.istic.m1.fstorm.modules.GenerateNeededBeans;
+import fr.istic.m1.fstorm.modules.GenerateWrapper;
 import fr.istic.m1.fstorm.modules.ReadCommandLineOptions;
 import fr.istic.m1.fstorm.modules.ReadComponents;
 import gecos.annotations.PragmaAnnotation;
@@ -30,12 +32,22 @@ public class Main implements IApplication {
 			if(params.getInputFile() == null)
 				return IApplication.EXIT_OK;
 			
-			GecosProject proj = GecosUserCoreFactory.project("fstorm", params.getInputFile());
+			String filename = params.getInputFile();
+			GecosProject proj = GecosUserCoreFactory.project("fstorm", filename);
 			CDTFrontEnd cdt = new CDTFrontEnd(proj);
 			cdt.compute();
 			List<PragmaAnnotation> pragmas = (new FindAllPragmas(proj)).compute();
 			List<StormComponent> comps = (new ReadComponents(pragmas)).compute();
-			(new GenerateJavaClass(comps, params.getOdir(), params.getPack(), "test")).compute();
+			(new GenerateJavaClass(comps,
+					params.getOdir(),
+					params.getPack(),
+					filename.substring(0, filename.lastIndexOf('.'))))
+			.compute();
+			
+			for(StormComponent comp : comps) {
+				(new GenerateNeededBeans(comp, params.getPack(), params.getOdir())).compute();
+				(new GenerateWrapper(comp, params.getPack())).compute();
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

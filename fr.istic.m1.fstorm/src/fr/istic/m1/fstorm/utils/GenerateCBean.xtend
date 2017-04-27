@@ -1,11 +1,10 @@
 package fr.istic.m1.fstorm.utils
 
-import fr.istic.m1.fstorm.beans.StormComponent
+import fr.istic.m1.fstorm.beans.CBean
+import fr.istic.m1.fstorm.beans.CBeanAttribute
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.nio.file.StandardOpenOption
-import fr.istic.m1.fstorm.beans.CBean
-import fr.istic.m1.fstorm.beans.CBeanAttribute
 
 class GenerateCBean {
 	private String odir;

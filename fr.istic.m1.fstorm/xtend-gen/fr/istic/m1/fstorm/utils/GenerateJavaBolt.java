@@ -2,8 +2,6 @@ package fr.istic.m1.fstorm.utils;
 
 import backtype.storm.tuple.Tuple;
 import fr.istic.m1.fstorm.beans.StormComponent;
-import gecos.core.ParameterSymbol;
-import gecos.core.Procedure;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -12,7 +10,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
@@ -58,8 +55,6 @@ public class GenerateJavaBolt {
   public CharSequence GenerateJava(final StormComponent component) {
     CharSequence _xblockexpression = null;
     {
-      Procedure _kernel = component.getKernel();
-      final EList<ParameterSymbol> p = _kernel.listParameters();
       ArrayList<String> param = new ArrayList<String>();
       for (int i = 0; (i < component.getParamTypes().size()); i++) {
         List<String> _paramTypes = component.getParamTypes();

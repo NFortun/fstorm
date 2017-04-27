@@ -6,10 +6,10 @@ import java.util.List;
  * 
  * @author Arthur Blanleuil
  *
- * Définit une classe Java dans la JNI.
- * Cette classe s'occupe de générer le code
+ * Dï¿½finit une classe Java dans la JNI.
+ * Cette classe s'occupe de gï¿½nï¿½rer le code
  * d'acquisition de la classe dans la JNI, ainsi
- * que de son constructeur par défaut.
+ * que de son constructeur par dï¿½faut.
  */
 public class JClass implements JType {
 
@@ -17,8 +17,8 @@ public class JClass implements JType {
 	static protected String classVar;
 	static protected String constructorVar;
 
-	public JClass(String className) {
-		this.className = className;
+	public JClass(String _className) {
+		className = _className;
 		
 		if ((classVar = WE.getScope().getClass(className)) == null) {
 			classVar = WE.getScope().addClass(className);
