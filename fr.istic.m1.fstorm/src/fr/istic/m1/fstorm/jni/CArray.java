@@ -22,9 +22,7 @@ public class CArray implements CType {
 			return null;
 	
 		JArray jr = (JArray)jt;
-		@SuppressWarnings("unused")
-		String env = WrapperEnvironment.getScope().getEnvironment();
-		
+
 		Variable arrs = v.get(0);
 		Variable ns   = v.get(1);
 		Variable ret  = new Variable(jt, null);

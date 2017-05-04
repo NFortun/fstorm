@@ -8,6 +8,7 @@ import java.io.BufferedOutputStream
 import backtype.storm.tuple.Tuple
 import java.nio.file.Files
 import java.nio.file.Paths
+import fr.istic.m1.fstorm.jni.WrapperEnvironment
 
 class GenerateJavaBolt {
 	String packageName;
@@ -73,7 +74,17 @@ class GenerateJavaBolt {
 				}
 
 				public void execute(Tuple tuple) {
-					collector.emit(«component.kernelName»(«FOR arg : argToC SEPARATOR ',' »«arg»«ENDFOR»));
+					«component.returnType» ret = «component.kernelName»(«FOR arg : argToC SEPARATOR ',' »«arg»«ENDFOR»);
+	
+					«IF component.isFlat && WrapperEnvironment.beanScope.getBean(component.returnType) !== null»
+					collector.emit(new Values(
+					«FOR attr : WrapperEnvironment.beanScope.getBean(component.returnType).attributes SEPARATOR ','»
+					ret.get«attr.name.toFirstUpper»()
+					«ENDFOR»
+					));
+					«ELSE»
+					collector.emit(new Values(ret));
+				  	«ENDIF»
 				}
 
 				public void cleanup() {

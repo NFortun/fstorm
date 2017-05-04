@@ -34,9 +34,9 @@ public class GenerateWrapper {
 					+ "Spout";
 			
 			// prototype
-			buffer_final.append("JNIEXPORT "+jret_type.getJniType()+" JNICALL Java_"+className+"_"+_inArg.getKernelName()+"() {\n");
+			buffer_final.append("JNIEXPORT "+jret_type.getJniType()+" JNICALL Java_"+className+"_"+_inArg.getKernelName()+"(");
 			buffer_final.append("JNIEnv* "+WrapperEnvironment.getScope().getEnvironment()+", jclass "+WrapperEnvironment.getScope().getCallingClass());
-			
+			buffer_final.append(") {\n");
 			// corps de la fonction
 			CType ret_type = JNIType.cFromString(getTypeName(_inArg.getKernel().getSymbol().getType().asFunction().getReturnType()));
 			Variable ret = new Variable(ret_type, _inArg.getKernelName()+"()");

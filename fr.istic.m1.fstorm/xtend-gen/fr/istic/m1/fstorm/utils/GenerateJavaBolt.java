@@ -1,7 +1,11 @@
 package fr.istic.m1.fstorm.utils;
 
 import backtype.storm.tuple.Tuple;
+import fr.istic.m1.fstorm.beans.CBean;
+import fr.istic.m1.fstorm.beans.CBeanAttribute;
 import fr.istic.m1.fstorm.beans.StormComponent;
+import fr.istic.m1.fstorm.jni.BeanScope;
+import fr.istic.m1.fstorm.jni.WrapperEnvironment;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -152,7 +156,9 @@ public class GenerateJavaBolt {
       _builder.append("public void execute(Tuple tuple) {");
       _builder.newLine();
       _builder.append("\t\t");
-      _builder.append("collector.emit(");
+      String _returnType_1 = component.getReturnType();
+      _builder.append(_returnType_1, "\t\t");
+      _builder.append(" ret = ");
       String _kernelName_2 = component.getKernelName();
       _builder.append(_kernelName_2, "\t\t");
       _builder.append("(");
@@ -167,8 +173,45 @@ public class GenerateJavaBolt {
           _builder.append(arg_1, "\t\t");
         }
       }
-      _builder.append("));");
+      _builder.append(");");
       _builder.newLineIfNotEmpty();
+      _builder.append("\t");
+      _builder.newLine();
+      {
+        if (((component.isFlat()).booleanValue() && (WrapperEnvironment.getBeanScope().getBean(component.getReturnType()) != null))) {
+          _builder.append("\t\t");
+          _builder.append("collector.emit(new Values(");
+          _builder.newLine();
+          {
+            BeanScope _beanScope = WrapperEnvironment.getBeanScope();
+            String _returnType_2 = component.getReturnType();
+            CBean _bean = _beanScope.getBean(_returnType_2);
+            List<CBeanAttribute> _attributes = _bean.getAttributes();
+            boolean _hasElements_2 = false;
+            for(final CBeanAttribute attr : _attributes) {
+              if (!_hasElements_2) {
+                _hasElements_2 = true;
+              } else {
+                _builder.appendImmediate(",", "\t\t");
+              }
+              _builder.append("\t\t");
+              _builder.append("ret.get");
+              String _name = attr.getName();
+              String _firstUpper_1 = StringExtensions.toFirstUpper(_name);
+              _builder.append(_firstUpper_1, "\t\t");
+              _builder.append("()");
+              _builder.newLineIfNotEmpty();
+            }
+          }
+          _builder.append("\t\t");
+          _builder.append("));");
+          _builder.newLine();
+        } else {
+          _builder.append("\t\t");
+          _builder.append("collector.emit(new Values(ret));");
+          _builder.newLine();
+        }
+      }
       _builder.append("\t");
       _builder.append("}");
       _builder.newLine();

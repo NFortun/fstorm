@@ -9,23 +9,11 @@ script test.cs {
     }
     pass ReadComponents:ReadComponents {
     }
+    pass GenerateNeededBeans:GenerateNeededBeans {
+    }
+    pass GenerateWrapper:GenerateWrapper {
+    }
     pass GenerateJavaClass:GenerateJavaClass {
-    }
-    pass GenerateNeededBeans:GenerateNeededBeans {
-    }
-    pass GenerateWrapper:GenerateWrapper {
-    }
-    pass GenerateNeededBeans:GenerateNeededBeans {
-    }
-    pass GenerateWrapper:GenerateWrapper {
-    }
-    pass GenerateNeededBeans:GenerateNeededBeans {
-    }
-    pass GenerateWrapper:GenerateWrapper {
-    }
-    pass GenerateNeededBeans:GenerateNeededBeans {
-    }
-    pass GenerateWrapper:GenerateWrapper {
     }
     pass WriteFinalCFile:WriteFinalCFile {
     }

@@ -20,7 +20,7 @@ public class ReadCommandLineOptions {
 		FStormParameters params = new FStormParameters();
 		Options options = new Options();
 
-		options.addOption("M", "makefile", false, "generate a Makefile");
+		//options.addOption("M", "makefile", false, "generate a Makefile");
 		options.addOption("o", "odir", true, "set the output directory");
 		options.addOption("p", "package", true, "set the Java package");
 		options.addOption("v", "verbose", false, "display debug informations");
