@@ -4,6 +4,7 @@ import fr.istic.m1.fstorm.beans.StormComponent
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.nio.file.StandardOpenOption
+import fr.istic.m1.fstorm.jni.WrapperEnvironment
 
 class GenerateJavaSpout {
 	private String odir;
@@ -43,8 +44,18 @@ class GenerateJavaSpout {
 			}
 
 			@Override
-				public void nextTuple() {
-			  	collector.emit(«component.kernelName»());
+			public void nextTuple() {
+				«component.returnType» ret = «component.kernelName»();
+
+				«IF component.isFlat && WrapperEnvironment.beanScope.getBean(component.returnType) !== null»
+				collector.emit(new Values(
+				«FOR attr : WrapperEnvironment.beanScope.getBean(component.returnType).attributes SEPARATOR ','»
+				ret.get«attr.name.toFirstUpper»()
+				«ENDFOR»
+				));
+				«ELSE»
+				collector.emit(new Values(ret));
+			  	«ENDIF»
 			}
 
 			@Override

@@ -4,6 +4,7 @@ import fr.istic.m1.fstorm.beans.CBean;
 
 public interface JNIType {
 	public static JType javaFromString(String s) {
+
 		switch (s) {
 		case "char":
 			return new JPrim(Primitive.CHAR);
@@ -13,7 +14,7 @@ public interface JNIType {
 			return new JPrim(Primitive.INT);
 		case "long":
 			return new JPrim(Primitive.LONG);
-		case "float":
+		case "float": case " float":
 			return new JPrim(Primitive.FLOAT);
 		case "double":
 			return new JPrim(Primitive.DOUBLE);
@@ -21,7 +22,7 @@ public interface JNIType {
 			return new JInteger();
 		case "Float":
 			return new JFloat();
-		case "String":
+		case "String": case "*(char)":
 			return new JString();
 		case "void":
 			return new JVoid();
@@ -31,12 +32,17 @@ public interface JNIType {
 				return new JBean(cb);
 			} else if (s.substring(s.length()-2,s.length()).equals("[]")) {
 				return new JArray(javaFromString(s.substring(0,s.length()-2)));
+			} else if (s.charAt(0) == '*') {
+				return new JArray(javaFromString(s.substring(2, s.length()-1)));
+			} else if (s.substring(0,2).equals("[]")) {
+				return new JArray(javaFromString(s.substring(3, s.length()-1)));
 			} else {
 				return null;
 			}
 		}
 	}
 	public static CType cFromString(String s) {
+
 		switch (s) {
 		case "void":
 			return new CVoid();
@@ -48,7 +54,7 @@ public interface JNIType {
 			return new CPrim(Primitive.INT);
 		case "long": case "Long":
 			return new CPrim(Primitive.LONG);
-		case "float": case "Float":
+		case " float": case "Float":
 			return new CPrim(Primitive.FLOAT);
 		case "double": case "Double":
 			return new CPrim(Primitive.DOUBLE);

@@ -3,6 +3,9 @@ package fr.istic.m1.fstorm.modules;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.emf.common.util.EList;
+
+import fr.irisa.cairn.tools.ecore.query.EMFUtils;
 import fr.istic.m1.fstorm.FStormPragma;
 import fr.istic.m1.fstorm.InvalidPragmaSyntaxException;
 import fr.istic.m1.fstorm.ParameterCountException;
@@ -16,6 +19,7 @@ import fr.istic.m1.fstorm.utils.PragmaParser;
 import gecos.annotations.AnnotatedElement;
 import gecos.annotations.PragmaAnnotation;
 import gecos.core.ProcedureSymbol;
+import gecos.instrs.RetInstruction;
 
 /**
  * Auxiliary class used to store informations from pragma annotations.
@@ -121,6 +125,17 @@ public class ReadComponents {
 						component.setKernel(proc.getProcedure());
 						
 						checkParameters(component);
+						EList<PragmaAnnotation> ann_in =
+								EMFUtils.eAllContentsInstancesOf(proc, PragmaAnnotation.class);
+						component.setFlat(false);
+						for (PragmaAnnotation ann : ann_in) {
+							if (ann.getAnnotatedElement() instanceof RetInstruction) {
+								String[] ann_list = ann.getContent().get(0).split(" ");
+								if (ann_list[0].equals("fstorm") && ann_list[1].equals("flat")) {
+									component.setFlat(true);
+								}
+							}
+						}
 						components.add(component);
 					}
 				}
@@ -161,7 +176,9 @@ public class ReadComponents {
 	 * @throws ParameterCountException 
 	 */
 	private void checkParameters(StormComponent component) throws ParameterCountException {
+		@SuppressWarnings("unused")
 		int paramCount = component.getKernel().getSymbol().listParameters().size();
+		@SuppressWarnings("unused")
 		int pragmaParamCount = component.getParamTypes().size();
 
 		/*

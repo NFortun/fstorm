@@ -17,8 +17,8 @@ public class JClass implements JType {
 	static protected String classVar;
 	static protected String constructorVar;
 
-	public JClass(String className) {
-		this.className = className;
+	public JClass(String _className) {
+		className = _className;
 		
 		if ((classVar = WrapperEnvironment.getScope().getClass(className)) == null) {
 			classVar = WrapperEnvironment.getScope().addClass(className);

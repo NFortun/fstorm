@@ -5,12 +5,21 @@ import java.util.List;
 import gecos.core.Procedure;
 
 public class StormComponent {
+	private Boolean flat;
 	private Procedure kernel;
 	private String kernelName;
 	private StormComponentType nodeType;
 	private List<String> paramTypes;
 	private String returnType;
 	private String wrapper;
+
+	public Boolean isFlat() {
+		return flat;
+	}
+	
+	public void setFlat(Boolean flat) {
+		this.flat = flat;
+	}
 	
 	public Procedure getKernel() {
 		return kernel;

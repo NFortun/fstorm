@@ -1,7 +1,10 @@
 package fr.istic.m1.fstorm.utils;
 
+import com.google.common.base.Objects;
 import fr.istic.m1.fstorm.beans.CBean;
 import fr.istic.m1.fstorm.beans.CBeanAttribute;
+import fr.istic.m1.fstorm.jni.BeanScope;
+import fr.istic.m1.fstorm.jni.WrapperEnvironment;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -40,18 +43,19 @@ public class GenerateCBean {
         _builder.append("\t");
         _builder.append("private ");
         String _typeName = attr.getTypeName();
-        _builder.append(_typeName, "\t");
+        String _javaType = this.javaType(_typeName);
+        _builder.append(_javaType, "\t");
         _builder.append(" ");
         String _name_1 = attr.getName();
         _builder.append(_name_1, "\t");
         _builder.append(";");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t");
         _builder.newLine();
         _builder.append("\t");
         _builder.append("public ");
         String _typeName_1 = attr.getTypeName();
-        _builder.append(_typeName_1, "\t");
+        String _javaType_1 = this.javaType(_typeName_1);
+        _builder.append(_javaType_1, "\t");
         _builder.append(" get");
         String _name_2 = attr.getName();
         String _firstUpper = StringExtensions.toFirstUpper(_name_2);
@@ -77,7 +81,8 @@ public class GenerateCBean {
         _builder.append(_firstUpper_1, "\t");
         _builder.append("(");
         String _typeName_2 = attr.getTypeName();
-        _builder.append(_typeName_2, "\t");
+        String _javaType_2 = this.javaType(_typeName_2);
+        _builder.append(_javaType_2, "\t");
         _builder.append(" ");
         String _name_5 = attr.getName();
         _builder.append(_name_5, "\t");
@@ -101,6 +106,63 @@ public class GenerateCBean {
     _builder.append("}");
     _builder.newLine();
     return _builder;
+  }
+  
+  public String javaType(final String s) {
+    String _switchResult = null;
+    switch (s) {
+      case "char":
+        _switchResult = "byte";
+        break;
+      case "void":
+      case "short":
+      case "int":
+      case "long":
+      case "float":
+      case "double":
+        _switchResult = s;
+        break;
+      case "*(char)":
+        _switchResult = "String";
+        break;
+      default:
+        String _xifexpression = null;
+        BeanScope _beanScope = WrapperEnvironment.getBeanScope();
+        CBean _bean = _beanScope.getBean(s);
+        boolean _notEquals = (!Objects.equal(_bean, null));
+        if (_notEquals) {
+          _xifexpression = s;
+        } else {
+          String _xifexpression_1 = null;
+          char _charAt = s.charAt(0);
+          boolean _equals = Objects.equal(Character.valueOf(_charAt), "*");
+          if (_equals) {
+            int _length = s.length();
+            int _minus = (_length - 1);
+            String _substring = s.substring(2, _minus);
+            Object _javaType = this.javaType(_substring);
+            _xifexpression_1 = (_javaType + "[]");
+          } else {
+            String _xifexpression_2 = null;
+            String _substring_1 = s.substring(0, 2);
+            boolean _equals_1 = _substring_1.equals("[]");
+            if (_equals_1) {
+              int _length_1 = s.length();
+              int _minus_1 = (_length_1 - 1);
+              String _substring_2 = s.substring(3, _minus_1);
+              Object _javaType_1 = this.javaType(_substring_2);
+              _xifexpression_2 = (_javaType_1 + "[]");
+            } else {
+              _xifexpression_2 = null;
+            }
+            _xifexpression_1 = _xifexpression_2;
+          }
+          _xifexpression = _xifexpression_1;
+        }
+        _switchResult = _xifexpression;
+        break;
+    }
+    return _switchResult;
   }
   
   public Path Execute(final CBean cmp) {

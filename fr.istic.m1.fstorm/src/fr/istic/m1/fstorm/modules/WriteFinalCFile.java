@@ -8,18 +8,16 @@ import java.util.List;
 
 import fr.istic.m1.fstorm.beans.StormComponent;
 
-/**
- * WriteFinalCFile is a sample module. When the script evaluator encounters
- * the 'WriteFinalCFile' function, it calls the compute method.
- */
 public class WriteFinalCFile {
-	
-	private String filename;
+
+	private String in_filename;
+	private String out_filename;
 	private List<StormComponent> comps;
 	private String odir;
 
-	public WriteFinalCFile (String filename, List<StormComponent> comps, String odir) {
-		this.filename = filename;
+	public WriteFinalCFile (String in_filename, String out_filename, List<StormComponent> comps, String odir) {
+		this.in_filename = in_filename;
+		this.out_filename = out_filename;
 		this.comps = comps;
 		this.odir = odir;
 	}
@@ -27,7 +25,7 @@ public class WriteFinalCFile {
 	public void compute() {
 		String content = "";
 		try {
-			content = new String(Files.readAllBytes(Paths.get(filename)));
+			content = new String(Files.readAllBytes(Paths.get(in_filename)));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -43,7 +41,7 @@ public class WriteFinalCFile {
 
 		try {
 			Files.deleteIfExists(
-				Paths.get(odir, "kernel.c")
+				Paths.get(odir, Paths.get(out_filename).getFileName().toString())
 			);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -56,7 +54,7 @@ public class WriteFinalCFile {
 		
 		try {
 			Files.write(
-					Paths.get(odir, "kernel.c"),
+					Paths.get(odir, Paths.get(out_filename).getFileName().toString()),
 					content.getBytes(), StandardOpenOption.CREATE
 			);
 		} catch (IOException e) {
