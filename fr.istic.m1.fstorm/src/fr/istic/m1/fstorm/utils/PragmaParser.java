@@ -117,7 +117,7 @@ public class PragmaParser {
 					case "bolt":
 						lexer.remove(0);
 						return parseBolt(lexer);
-					case "tuple":
+					case "flat":
 						return new TupleReturnPragma();
 					default:
 						throw new InvalidPragmaSyntaxException("expected identifier \"spout\", \"bolt\", \"hls\" or \"HLS\"");

@@ -42,15 +42,15 @@ public class Main implements IApplication {
 			CDTFrontEnd cdt = new CDTFrontEnd(proj);
 			cdt.compute();
 			List<PragmaAnnotation> pragmas = (new FindAllPragmas(proj)).compute();
-			List<StormComponent> comps = (new ReadComponents(pragmas)).compute();
-			(new GenerateJavaClass(comps,
+			List<StormComponent> comps = (new ReadComponents(params, pragmas)).compute();
+			(new GenerateJavaClass(params, comps,
 					params.getOdir(),
 					params.getPack(),
 					filename.substring(0, filename.lastIndexOf('.'))))
 			.compute();
 			
 			for(StormComponent comp : comps) {
-				(new GenerateNeededBeans(comp, params.getPack(), params.getOdir())).compute();
+				(new GenerateNeededBeans(params, comp, params.getPack(), params.getOdir())).compute();
 				(new GenerateWrapper(comp, params.getPack())).compute();
 			}
 		} catch (Exception e) {

@@ -5,6 +5,7 @@ import java.util.List;
 
 import fr.istic.m1.fstorm.beans.CBean;
 import fr.istic.m1.fstorm.beans.CBeanAttribute;
+import fr.istic.m1.fstorm.beans.FStormParameters;
 import fr.istic.m1.fstorm.beans.StormComponent;
 import fr.istic.m1.fstorm.jni.WrapperEnvironment;
 import fr.istic.m1.fstorm.utils.GenerateCBean;
@@ -16,12 +17,13 @@ import gecos.types.RecordType;
 import gecos.types.Type;
 
 public class GenerateNeededBeans {
-
+	private FStormParameters appParam;
 	private StormComponent comp;
 	private String packageName;
 	private String BuildDir;
 
-	public GenerateNeededBeans (StormComponent comp, String packageName, String BuildDir) {
+	public GenerateNeededBeans (FStormParameters params, StormComponent comp, String packageName, String BuildDir) {
+		this.appParam = params;
 		this.comp = comp;
 		this.packageName = packageName;
 		this.BuildDir = BuildDir;
@@ -33,6 +35,8 @@ public class GenerateNeededBeans {
 		GenerateCBean cbg = new GenerateCBean(packageName, BuildDir);
 		for (CBean cb : beans) {
 			cbg.Execute(cb);
+			if(appParam.isVerbose())
+					System.out.println("Bean "+cb.getName()+" generated");
 		}
 	}
 

@@ -11,6 +11,7 @@ import fr.istic.m1.fstorm.InvalidPragmaSyntaxException;
 import fr.istic.m1.fstorm.ParameterCountException;
 import fr.istic.m1.fstorm.PragmaLexicalUnit;
 import fr.istic.m1.fstorm.beans.ComponentPragma;
+import fr.istic.m1.fstorm.beans.FStormParameters;
 import fr.istic.m1.fstorm.beans.StormComponent;
 import fr.istic.m1.fstorm.beans.StormComponentType;
 import fr.istic.m1.fstorm.utils.PragmaLexer;
@@ -90,13 +91,15 @@ class PragmaInformations {
  */
 public class ReadComponents {
 	private List<PragmaAnnotation> annotations;
+	private FStormParameters appParam;
 	
 	/**
 	 * Constructor using a list of annotations in the C code.
 	 * @param annotations pragma annotations detected in the C code.
 	 */
-	public ReadComponents(List<PragmaAnnotation> annotations) {
+	public ReadComponents(FStormParameters params, List<PragmaAnnotation> annotations) {
 		this.annotations = annotations;
+		this.appParam = params;
 	}
 	
 	/**
@@ -150,22 +153,23 @@ public class ReadComponents {
 			}
 		}
 		
-		/* Loop printing debug informations about generated components
-		for(StormComponent comp : components) {
-			System.out.print(comp.getNodeType().toString());
-			System.out.print(" " + comp.getKernelName());
-			if(!comp.getParamTypes().isEmpty()) {
-				String plist = "(" + comp.getParamTypes().get(0);
+		if(appParam.isVerbose()){
+			for(StormComponent comp : components) {
+				System.out.print(comp.getNodeType().toString());
+				System.out.print(" " + comp.getKernelName());
+				if(!comp.getParamTypes().isEmpty()) {
+					String plist = "(" + comp.getParamTypes().get(0);
+					
+					for(int i = 1; i < comp.getParamTypes().size(); ++i)
+						plist += "," + comp.getParamTypes().get(i);
+					
+					plist += ")";
+					System.out.print(plist);
+				}
 				
-				for(int i = 1; i < comp.getParamTypes().size(); ++i)
-					plist += "," + comp.getParamTypes().get(i);
-				
-				plist += ")";
-				System.out.print(plist);
+				System.out.println(" returns(" + comp.getReturnType() + ")");
 			}
-			
-			System.out.println(" returns(" + comp.getReturnType() + ")");
-		}*/
+		}
 		
 		return components;
 	}
