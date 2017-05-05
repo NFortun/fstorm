@@ -175,7 +175,6 @@ public class GenerateJavaBolt {
       }
       _builder.append(");");
       _builder.newLineIfNotEmpty();
-      _builder.append("\t");
       _builder.newLine();
       {
         if (((component.isFlat()).booleanValue() && (WrapperEnvironment.getBeanScope().getBean(component.getReturnType()) != null))) {

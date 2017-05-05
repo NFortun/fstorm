@@ -75,7 +75,7 @@ class GenerateJavaBolt {
 
 				public void execute(Tuple tuple) {
 					«component.returnType» ret = «component.kernelName»(«FOR arg : argToC SEPARATOR ',' »«arg»«ENDFOR»);
-	
+			
 					«IF component.isFlat && WrapperEnvironment.beanScope.getBean(component.returnType) !== null»
 					collector.emit(new Values(
 					«FOR attr : WrapperEnvironment.beanScope.getBean(component.returnType).attributes SEPARATOR ','»

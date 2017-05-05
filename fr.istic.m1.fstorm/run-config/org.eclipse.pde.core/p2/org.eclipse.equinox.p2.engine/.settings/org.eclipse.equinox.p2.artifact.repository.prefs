@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+repositories/file\:_home_lalla_workspace_fstorm_fr.istic.m1.fstorm_run-config_org.eclipse.pde.core_FStorm%20application_org.eclipse.osgi_347_data_listener_1925729951/description=
+repositories/file\:_home_lalla_workspace_fstorm_fr.istic.m1.fstorm_run-config_org.eclipse.pde.core_FStorm%20application_org.eclipse.osgi_347_data_listener_1925729951/isSystem=true
+repositories/file\:_home_lalla_workspace_fstorm_fr.istic.m1.fstorm_run-config_org.eclipse.pde.core_FStorm%20application_org.eclipse.osgi_347_data_listener_1925729951/name=dropins
+repositories/file\:_home_lalla_workspace_fstorm_fr.istic.m1.fstorm_run-config_org.eclipse.pde.core_FStorm%20application_org.eclipse.osgi_347_data_listener_1925729951/provider=
+repositories/file\:_home_lalla_workspace_fstorm_fr.istic.m1.fstorm_run-config_org.eclipse.pde.core_FStorm%20application_org.eclipse.osgi_347_data_listener_1925729951/type=org.eclipse.equinox.p2.artifact.repository.simpleRepository
+repositories/file\:_home_lalla_workspace_fstorm_fr.istic.m1.fstorm_run-config_org.eclipse.pde.core_FStorm%20application_org.eclipse.osgi_347_data_listener_1925729951/uri=file\:/home/lalla/workspace/fstorm/fr.istic.m1.fstorm/run-config/org.eclipse.pde.core/FStorm%20application/org.eclipse.osgi/347/data/listener_1925729951/
+repositories/file\:_home_lalla_workspace_fstorm_fr.istic.m1.fstorm_run-config_org.eclipse.pde.core_FStorm%20application_org.eclipse.osgi_347_data_listener_1925729951/version=1
+repositories/file\:_home_lalla_workspace_fstorm_fr.istic.m1.fstorm_run-config_org.eclipse.pde.core_p2_org.eclipse.equinox.p2.core_cache/description=
+repositories/file\:_home_lalla_workspace_fstorm_fr.istic.m1.fstorm_run-config_org.eclipse.pde.core_p2_org.eclipse.equinox.p2.core_cache/isSystem=true
+repositories/file\:_home_lalla_workspace_fstorm_fr.istic.m1.fstorm_run-config_org.eclipse.pde.core_p2_org.eclipse.equinox.p2.core_cache/name=download cache
+repositories/file\:_home_lalla_workspace_fstorm_fr.istic.m1.fstorm_run-config_org.eclipse.pde.core_p2_org.eclipse.equinox.p2.core_cache/provider=
+repositories/file\:_home_lalla_workspace_fstorm_fr.istic.m1.fstorm_run-config_org.eclipse.pde.core_p2_org.eclipse.equinox.p2.core_cache/type=org.eclipse.equinox.p2.artifact.repository.simpleRepository
+repositories/file\:_home_lalla_workspace_fstorm_fr.istic.m1.fstorm_run-config_org.eclipse.pde.core_p2_org.eclipse.equinox.p2.core_cache/uri=file\:/home/lalla/workspace/fstorm/fr.istic.m1.fstorm/run-config/org.eclipse.pde.core/p2/org.eclipse.equinox.p2.core/cache/
+repositories/file\:_home_lalla_workspace_fstorm_fr.istic.m1.fstorm_run-config_org.eclipse.pde.core_p2_org.eclipse.equinox.p2.core_cache/version=1

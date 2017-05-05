@@ -2,14 +2,10 @@ package fr.istic.m1.fstorm.utils
 
 import fr.istic.m1.fstorm.beans.CBean
 import fr.istic.m1.fstorm.beans.CBeanAttribute
+import fr.istic.m1.fstorm.jni.WrapperEnvironment
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.nio.file.StandardOpenOption
-<<<<<<< HEAD
-import fr.istic.m1.fstorm.jni.JNIType
-import fr.istic.m1.fstorm.jni.WrapperEnvironment
-=======
->>>>>>> branch 'master' of https://github.com/Shumush/fstorm
 
 class GenerateCBean {
 	private String odir;
@@ -39,7 +35,7 @@ class GenerateCBean {
 		}
 		'''
 	
-	def javaType(String s) {
+	def String javaType(String s) {
 		switch s {
 			case "char": "byte"
 			case "void"
