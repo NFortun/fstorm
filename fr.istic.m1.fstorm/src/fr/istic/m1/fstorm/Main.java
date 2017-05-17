@@ -16,6 +16,7 @@ import fr.istic.m1.fstorm.modules.GenerateNeededBeans;
 import fr.istic.m1.fstorm.modules.GenerateWrapper;
 import fr.istic.m1.fstorm.modules.ReadCommandLineOptions;
 import fr.istic.m1.fstorm.modules.ReadComponents;
+import fr.istic.m1.fstorm.modules.WriteFinalCFile;
 import gecos.annotations.PragmaAnnotation;
 import gecos.gecosproject.GecosProject;
 
@@ -53,6 +54,12 @@ public class Main implements IApplication {
 				(new GenerateNeededBeans(params, comp, params.getPack(), params.getOdir())).compute();
 				(new GenerateWrapper(comp, params.getPack())).compute();
 			}
+			
+			(new WriteFinalCFile(params,
+					filename,
+					filename,
+					comps,
+					params.getOdir())).compute();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
